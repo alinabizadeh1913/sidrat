@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+* {
+  font-size: 0.85rem;
+}
+
+p {
+  font-size: 0.85rem;
+}
+
+h1 {
+  font-size: 2.45rem;
+}
+
+h2 {
+  font-size: 1.45rem;
+}
+
+h3 {
+  font-size: 1.05rem;
+}
+
+h4 {
+  font-size: 0.95rem;
+}
+
+h5 {
+  font-size: 0.85rem;
+}
+
+h6 {
+  font-size: 0.75rem;
+}
+
+@media screen and (min-width: 600px) {
+  * {
+    font-size: 0.95rem;
+  }
+  p {
+    font-size: 0.95rem;
+  }
+  h1 {
+    font-size: 2.65rem;
+  }
+  h2 {
+    font-size: 1.65rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+  h4 {
+    font-size: 1.15rem;
+  }
+  h5 {
+    font-size: 1.05rem;
+  }
+  h6 {
+    font-size: 0.95rem;
+  }
+}
+@media screen and (min-width: 900px) {
+  * {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  h1 {
+    font-size: 2.85rem;
+  }
+  h2 {
+    font-size: 1.85rem;
+  }
+  h3 {
+    font-size: 1.45rem;
+  }
+  h4 {
+    font-size: 1.35rem;
+  }
+  h5 {
+    font-size: 1.25rem;
+  }
+  h6 {
+    font-size: 0.95rem;
+  }
+}
+.space-large {
+  margin-top: 80px;
+}
+
+.space-medium {
+  margin-top: 50px;
+}
+
+.space-small {
+  margin-top: 30px;
+}
+
+.space-exterasmall {
+  margin-top: 15px;
+}
+
+@media (min-width: 600px) {
+  .space-large {
+    margin-top: 100px;
+  }
+  .space-medium {
+    margin-top: 70px;
+  }
+  .space-small {
+    margin-top: 40px;
+  }
+  .space-exterasmall {
+    margin-top: 20px;
+  }
+}
+@media (min-width: 900px) {
+  .space-large {
+    margin-top: 120px;
+  }
+  .space-medium {
+    margin-top: 90px;
+  }
+  .space-small {
+    margin-top: 60px;
+  }
+  .space-exterasmall {
+    margin-top: 30px;
+  }
+}
+.margin-bottom-large {
+  margin-bottom: 80px;
+}
+
+.margin-bottom-medium {
+  margin-bottom: 50px;
+}
+
+.margin-bottom-small {
+  margin-bottom: 30px;
+}
+
+.margin-bottom-extera-small {
+  margin-bottom: 15px;
+}
+
+@media (min-width: 600px) {
+  .margin-bottom-large {
+    margin-bottom: 100px;
+  }
+  .margin-bottom-medium {
+    margin-bottom: 70px;
+  }
+  .margin-bottom-small {
+    margin-bottom: 40px;
+  }
+  .margin-bottom-extera-small {
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 900px) {
+  .margin-bottom-large {
+    margin-bottom: 120px;
+  }
+  .margin-bottom-medium {
+    margin-bottom: 90px;
+  }
+  .margin-bottom-small {
+    margin-bottom: 60px;
+  }
+  .margin-bottom-extera-small {
+    margin-bottom: 30px;
+  }
+}
