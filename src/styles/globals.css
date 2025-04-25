@@ -2,8 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 @tailwind variants;
+.text-primary {
+  color: #f8c279;
+}
+
+.text-secondary {
+  color: #ead6b2;
+}
+
+.text-tertiary {
+  color: #ffe4bf;
+}
+
+.bg-primary {
+  background-color: #f8c279;
+}
+
+.bg-secondary {
+  background-color: #ead6b2;
+}
+
+.bg-tertiary {
+  background-color: #ffe4bf;
+}
+
+.bg-radial {
+  background: radial-gradient(#1a1a1b, #1a1a1b);
+}
+
+.border-primary {
+  border: 1px solid rgba(255, 243, 226, 0.25);
+}
+
+@font-face {
+  font-family: "fa-yekan-bakh-black";
+  src: url("../../public/fonts/fa-ar/YekanBlack/YekanBakh-Black.woff2") format("woff2"), url("../../public/fonts/fa-ar/YekanBlack/YekanBakh-Black.woff") format("woff"), url("../../public/fonts/fa-ar/YekanBlack/YekanBakh-Black.ttf") format("truetype"), url("../../public/fonts/fa-ar/YekanBlack/YekanBakh-Black.eot") format("embedded-opentype"), url("../../public/fonts/fa-ar/YekanBlack/YekanBakh-Black.otf") format("opentype");
+}
+@font-face {
+  font-family: "fa-yekan-bakh-bold";
+  src: url("../../public/fonts/fa-ar/YekanBold/YekanBakh-Bold.woff2") format("woff2"), url("../../public/fonts/fa-ar/YekanBold/YekanBakh-Bold.woff") format("woff"), url("../../public/fonts/fa-ar/YekanBold/YekanBakh-Bold.ttf") format("truetype"), url("../../public/fonts/fa-ar/YekanBold/YekanBakh-Bold.eot") format("embedded-opentype"), url("../../public/fonts/fa-ar/YekanBold/YekanBakh-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "en-biotif-bold";
+  src: url("../../public/fonts/en/BiotifBold/BiotifBold.woff2") format("woff2"), url("../../public/fonts/en/BiotifBold/BiotifBold.woff") format("woff"), url("../../public/fonts/en/BiotifBold/BiotifBold.ttf") format("truetype"), url("../../public/fonts/en/BiotifBold/BiotifBold.eot") format("embedded-opentype"), url("../../public/fonts/en/BiotifBold/BiotifBold.otf") format("opentype");
+}
+@font-face {
+  font-family: "en-biotif-regular";
+  src: url("../../public/fonts/en/BiotifRegular/BiotifRegular.woff2") format("woff2"), url("../../public/fonts/en/BiotifRegular/BiotifRegular.woff") format("woff"), url("../../public/fonts/en/BiotifRegular/BiotifRegular.ttf") format("truetype"), url("../../public/fonts/en/BiotifRegular/BiotifRegular.eot") format("embedded-opentype"), url("../../public/fonts/en/BiotifRegular/BiotifRegular.otf") format("opentype");
+}
+.uthman {
+  font-family: "ar-uthman";
+}
+
+.yekan-black {
+  font-family: "fa-yekan-bakh-black";
+}
+
+.yekan-bold {
+  font-family: "fa-yekan-bakh-bold";
+}
+
+.yekan-regular {
+  font-family: "fa-yekan-bakh-regular";
+}
+
+.biotif-light {
+  font-family: "en-biotif-light";
+}
+
+.biotif-bold {
+  font-family: "en-biotif-bold";
+}
+
+.biotif-regular {
+  font-family: "en-biotif-regular";
+}
+
 * {
   font-size: 0.85rem;
+  font-family: "font1";
+  line-height: normal !important;
+  letter-spacing: 0px !important;
 }
 
 p {
@@ -173,4 +252,19 @@ h6 {
   .margin-bottom-extera-small {
     margin-bottom: 30px;
   }
+}
+body {
+  background: #151616;
+}
+
+.special-container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#header {
+  background-image: url("../../public/images/Background.png");
+  background-size: cover;
+  background-position: top center;
 }

@@ -5,10 +5,161 @@
 @tailwind utilities;
 @tailwind variants;
 
+// Variables
+
+$body-background: #151616;
+
+$text-linear: linear-gradient(to right, #fabf6f, #ffdfb3);
+$text-primary: #f8c279;
+$text-secondary: #ead6b2;
+$text-tertiary: #ffe4bf;
+$text-quran: #fff;
+
+$bg-primary: #f8c279;
+$bg-secondary: #ead6b2;
+$bg-tertiary: #ffe4bf;
+$bg-radial: radial-gradient(#1a1a1b, #1a1a1b);
+
+$border-primary: rgba(255, 243, 226, 0.25);
+
+// Utilities
+
+.text-primary {
+  color: $text-primary;
+}
+
+.text-secondary {
+  color: $text-secondary;
+}
+
+.text-tertiary {
+  color: $text-tertiary;
+}
+
+.bg-primary {
+  background-color: $bg-primary;
+}
+
+.bg-secondary {
+  background-color: $bg-secondary;
+}
+
+.bg-tertiary {
+  background-color: $bg-tertiary;
+}
+
+.bg-radial {
+  background: $bg-radial;
+}
+
+.border-primary {
+  border: 1px solid $border-primary;
+}
+
+// Font Family
+
+// Ar
+// @font-face {
+//   font-family: "ar-uthman";
+//   src: url("../../public/fonts/ar/uthman/uthman.woff2") format("woff2"),
+//     url("../../public/fonts/ar/uthman/uthman.woff") format("woff"),
+//     url("../../public/fonts/ar/uthman/uthman.ttf") format("truetype"),
+//     url("../../public/fonts/ar/uthman/uthman.eot") format("embedded-opentype"),
+//     url("../../public/fonts/ar/uthman/uthman.otf") format("opentype");
+// }
+
+// Fa
+@font-face {
+  font-family: "fa-yekan-bakh-black";
+  src: url("../../public/fonts/fa-ar/YekanBlack/YekanBakh-Black.woff2")
+      format("woff2"),
+    url("../../public/fonts/fa-ar/YekanBlack/YekanBakh-Black.woff")
+      format("woff"),
+    url("../../public/fonts/fa-ar/YekanBlack/YekanBakh-Black.ttf")
+      format("truetype"),
+    url("../../public/fonts/fa-ar/YekanBlack/YekanBakh-Black.eot")
+      format("embedded-opentype"),
+    url("../../public/fonts/fa-ar/YekanBlack/YekanBakh-Black.otf")
+      format("opentype");
+}
+@font-face {
+  font-family: "fa-yekan-bakh-bold";
+  src: url("../../public/fonts/fa-ar/YekanBold/YekanBakh-Bold.woff2")
+      format("woff2"),
+    url("../../public/fonts/fa-ar/YekanBold/YekanBakh-Bold.woff") format("woff"),
+    url("../../public/fonts/fa-ar/YekanBold/YekanBakh-Bold.ttf")
+      format("truetype"),
+    url("../../public/fonts/fa-ar/YekanBold/YekanBakh-Bold.eot")
+      format("embedded-opentype"),
+    url("../../public/fonts/fa-ar/YekanBold/YekanBakh-Bold.otf")
+      format("opentype");
+}
+// @font-face {
+//   font-family: "fa-yekan-bakh-regular";
+//   src: url("../../public/fonts/fa-ar/YekanRegular/YekanBakh-Regular.woff2")
+//       format("woff2"),
+//     url("../../public/fonts/fa-ar/YekanRegular/YekanBakh-Regular.woff")
+//       format("woff"),
+//     url("../../public/fonts/fa-ar/YekanRegular/YekanBakh-Regular.ttf")
+//       format("truetype"),
+//     url("../../public/fonts/fa-ar/YekanRegular/YekanBakh-Regular.eot")
+//       format("embedded-opentype"),
+//     url("../../public/fonts/fa-ar/YekanRegular/YekanBakh-Regular.otf")
+//       format("opentype");
+// }
+
+// En
+@font-face {
+  font-family: "en-biotif-bold";
+  src: url("../../public/fonts/en/BiotifBold/BiotifBold.woff2") format("woff2"),
+    url("../../public/fonts/en/BiotifBold/BiotifBold.woff") format("woff"),
+    url("../../public/fonts/en/BiotifBold/BiotifBold.ttf") format("truetype"),
+    url("../../public/fonts/en/BiotifBold/BiotifBold.eot")
+      format("embedded-opentype"),
+    url("../../public/fonts/en/BiotifBold/BiotifBold.otf") format("opentype");
+}
+@font-face {
+  font-family: "en-biotif-regular";
+  src: url("../../public/fonts/en/BiotifRegular/BiotifRegular.woff2")
+      format("woff2"),
+    url("../../public/fonts/en/BiotifRegular/BiotifRegular.woff") format("woff"),
+    url("../../public/fonts/en/BiotifRegular/BiotifRegular.ttf")
+      format("truetype"),
+    url("../../public/fonts/en/BiotifRegular/BiotifRegular.eot")
+      format("embedded-opentype"),
+    url("../../public/fonts/en/BiotifRegular/BiotifRegular.otf")
+      format("opentype");
+}
+
+.uthman {
+  font-family: "ar-uthman";
+}
+.yekan-black {
+  font-family: "fa-yekan-bakh-black";
+}
+.yekan-bold {
+  font-family: "fa-yekan-bakh-bold";
+}
+.yekan-regular {
+  font-family: "fa-yekan-bakh-regular";
+}
+.biotif-light {
+  font-family: "en-biotif-light";
+}
+.biotif-bold {
+  font-family: "en-biotif-bold";
+}
+.biotif-regular {
+  font-family: "en-biotif-regular";
+}
+
 // Font Size
 
 * {
   font-size: 0.85rem;
+  font-family: "font1";
+  line-height: normal !important;
+  letter-spacing: 0px !important;
 }
 p {
   font-size: 0.85rem;
@@ -189,4 +340,24 @@ h6 {
   .margin-bottom-extera-small {
     margin-bottom: 30px;
   }
+}
+
+// Reboot
+
+body {
+  background: $body-background;
+}
+
+.special-container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+// Header
+
+#header {
+  background-image: url("../../public/images/Background.png");
+  background-size: cover;
+  background-position: top center;
 }
