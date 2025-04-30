@@ -9,8 +9,8 @@
 
 $body-background: #151616;
 
-$text-linear: linear-gradient(to right, #fabf6f, #ffdfb3);
-$text-primary: #f8c279;
+$text-linear: linear-gradient(180deg, #faaa3a, #fae3c3);
+$text-primary: #ffbc65;
 $text-secondary: #ead6b2;
 $text-tertiary: #ffe4bf;
 $text-quran: #fff;
@@ -18,7 +18,7 @@ $text-quran: #fff;
 $bg-primary: #f8c279;
 $bg-secondary: #ead6b2;
 $bg-tertiary: #ffe4bf;
-$bg-radial: radial-gradient(#1a1a1b, #1a1a1b);
+$bg-linear: linear-gradient(135deg, #191919, #292b2e);
 
 $border-primary: rgba(255, 243, 226, 0.25);
 
@@ -36,6 +36,14 @@ $border-primary: rgba(255, 243, 226, 0.25);
   color: $text-tertiary;
 }
 
+.text-quran {
+  color: $text-quran;
+}
+
+.bg-body{
+  background-color: $body-background;
+}
+
 .bg-primary {
   background-color: $bg-primary;
 }
@@ -48,8 +56,8 @@ $border-primary: rgba(255, 243, 226, 0.25);
   background-color: $bg-tertiary;
 }
 
-.bg-radial {
-  background: $bg-radial;
+.bg-linear {
+  background: $bg-linear;
 }
 
 .border-primary {
@@ -59,14 +67,14 @@ $border-primary: rgba(255, 243, 226, 0.25);
 // Font Family
 
 // Ar
-// @font-face {
-//   font-family: "ar-uthman";
-//   src: url("../../public/fonts/ar/uthman/uthman.woff2") format("woff2"),
-//     url("../../public/fonts/ar/uthman/uthman.woff") format("woff"),
-//     url("../../public/fonts/ar/uthman/uthman.ttf") format("truetype"),
-//     url("../../public/fonts/ar/uthman/uthman.eot") format("embedded-opentype"),
-//     url("../../public/fonts/ar/uthman/uthman.otf") format("opentype");
-// }
+@font-face {
+  font-family: "ar-uthman";
+  src: url("../../public/fonts/ar/uthman/uthman.woff2") format("woff2"),
+    url("../../public/fonts/ar/uthman/uthman.woff") format("woff"),
+    url("../../public/fonts/ar/uthman/uthman.ttf") format("truetype"),
+    url("../../public/fonts/ar/uthman/uthman.eot") format("embedded-opentype"),
+    url("../../public/fonts/ar/uthman/uthman.otf") format("opentype");
+}
 
 // Fa
 @font-face {
@@ -94,19 +102,19 @@ $border-primary: rgba(255, 243, 226, 0.25);
     url("../../public/fonts/fa-ar/YekanBold/YekanBakh-Bold.otf")
       format("opentype");
 }
-// @font-face {
-//   font-family: "fa-yekan-bakh-regular";
-//   src: url("../../public/fonts/fa-ar/YekanRegular/YekanBakh-Regular.woff2")
-//       format("woff2"),
-//     url("../../public/fonts/fa-ar/YekanRegular/YekanBakh-Regular.woff")
-//       format("woff"),
-//     url("../../public/fonts/fa-ar/YekanRegular/YekanBakh-Regular.ttf")
-//       format("truetype"),
-//     url("../../public/fonts/fa-ar/YekanRegular/YekanBakh-Regular.eot")
-//       format("embedded-opentype"),
-//     url("../../public/fonts/fa-ar/YekanRegular/YekanBakh-Regular.otf")
-//       format("opentype");
-// }
+@font-face {
+  font-family: "fa-yekan-bakh-regular";
+  src: url("../../public/fonts/fa-ar/YekanRegular/YekanBakh-Regular.woff2")
+      format("woff2"),
+    url("../../public/fonts/fa-ar/YekanRegular/YekanBakh-Regular.woff")
+      format("woff"),
+    url("../../public/fonts/fa-ar/YekanRegular/YekanBakh-Regular.ttf")
+      format("truetype"),
+    url("../../public/fonts/fa-ar/YekanRegular/YekanBakh-Regular.eot")
+      format("embedded-opentype"),
+    url("../../public/fonts/fa-ar/YekanRegular/YekanBakh-Regular.otf")
+      format("opentype");
+}
 
 // En
 @font-face {
@@ -143,9 +151,6 @@ $border-primary: rgba(255, 243, 226, 0.25);
 .yekan-regular {
   font-family: "fa-yekan-bakh-regular";
 }
-.biotif-light {
-  font-family: "en-biotif-light";
-}
 .biotif-bold {
   font-family: "en-biotif-bold";
 }
@@ -157,8 +162,7 @@ $border-primary: rgba(255, 243, 226, 0.25);
 
 * {
   font-size: 0.85rem;
-  font-family: "font1";
-  line-height: normal !important;
+  line-height: normal;
   letter-spacing: 0px !important;
 }
 p {
@@ -354,10 +358,118 @@ body {
   margin: 0 auto;
 }
 
+::selection {
+  background: #474747;
+  color: white;
+}
+
 // Header
 
 #header {
   background-image: url("../../public/images/Background.png");
   background-size: cover;
-  background-position: top center;
+  background-position: 0 0;
 }
+
+.gradient-text {
+  color: transparent;
+  background: $text-linear;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.gradient-text-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.gradient-text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: transparent;
+  mix-blend-mode: overlay;
+  background: linear-gradient(
+    290deg,
+    transparent,
+    transparent 16%,
+    #fff 18%,
+    transparent 20%,
+    transparent
+  );
+  background-size: 200%;
+  background-position: 200% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: textOverlay 5s linear infinite;
+}
+
+@keyframes textOverlay {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.glow-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  border-radius: 25px;
+  z-index: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glow-border::before {
+  content: "";
+  position: absolute;
+  width: 313%;
+  height: 313%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 15deg,
+    #ffe6c5 45deg,
+    transparent 90deg
+  );
+  animation: rotateGlow 3s linear infinite;
+  filter: blur(4px);
+  transform-origin: center center;
+}
+
+@keyframes rotateGlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// Main Menu
+
+#main-menu {
+  perspective: 1000px;
+  #main-menu-content {
+    transform-style: preserve-3d;
+    transform-origin: top center;
+  }
+}
+
+#main-section {
+  perspective: 1000px;
+  #main-section-content {
+    transform-style: preserve-3d;
+    transform-origin: bottom center;
+  }
+}
+

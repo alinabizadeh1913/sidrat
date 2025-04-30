@@ -3,7 +3,7 @@
 @tailwind utilities;
 @tailwind variants;
 .text-primary {
-  color: #f8c279;
+  color: #ffbc65;
 }
 
 .text-secondary {
@@ -12,6 +12,14 @@
 
 .text-tertiary {
   color: #ffe4bf;
+}
+
+.text-quran {
+  color: #fff;
+}
+
+.bg-body {
+  background-color: #151616;
 }
 
 .bg-primary {
@@ -26,8 +34,8 @@
   background-color: #ffe4bf;
 }
 
-.bg-radial {
-  background: radial-gradient(#1a1a1b, #1a1a1b);
+.bg-linear {
+  background: linear-gradient(135deg, #191919, #292b2e);
 }
 
 .border-primary {
@@ -35,12 +43,20 @@
 }
 
 @font-face {
+  font-family: "ar-uthman";
+  src: url("../../public/fonts/ar/uthman/uthman.woff2") format("woff2"), url("../../public/fonts/ar/uthman/uthman.woff") format("woff"), url("../../public/fonts/ar/uthman/uthman.ttf") format("truetype"), url("../../public/fonts/ar/uthman/uthman.eot") format("embedded-opentype"), url("../../public/fonts/ar/uthman/uthman.otf") format("opentype");
+}
+@font-face {
   font-family: "fa-yekan-bakh-black";
   src: url("../../public/fonts/fa-ar/YekanBlack/YekanBakh-Black.woff2") format("woff2"), url("../../public/fonts/fa-ar/YekanBlack/YekanBakh-Black.woff") format("woff"), url("../../public/fonts/fa-ar/YekanBlack/YekanBakh-Black.ttf") format("truetype"), url("../../public/fonts/fa-ar/YekanBlack/YekanBakh-Black.eot") format("embedded-opentype"), url("../../public/fonts/fa-ar/YekanBlack/YekanBakh-Black.otf") format("opentype");
 }
 @font-face {
   font-family: "fa-yekan-bakh-bold";
   src: url("../../public/fonts/fa-ar/YekanBold/YekanBakh-Bold.woff2") format("woff2"), url("../../public/fonts/fa-ar/YekanBold/YekanBakh-Bold.woff") format("woff"), url("../../public/fonts/fa-ar/YekanBold/YekanBakh-Bold.ttf") format("truetype"), url("../../public/fonts/fa-ar/YekanBold/YekanBakh-Bold.eot") format("embedded-opentype"), url("../../public/fonts/fa-ar/YekanBold/YekanBakh-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "fa-yekan-bakh-regular";
+  src: url("../../public/fonts/fa-ar/YekanRegular/YekanBakh-Regular.woff2") format("woff2"), url("../../public/fonts/fa-ar/YekanRegular/YekanBakh-Regular.woff") format("woff"), url("../../public/fonts/fa-ar/YekanRegular/YekanBakh-Regular.ttf") format("truetype"), url("../../public/fonts/fa-ar/YekanRegular/YekanBakh-Regular.eot") format("embedded-opentype"), url("../../public/fonts/fa-ar/YekanRegular/YekanBakh-Regular.otf") format("opentype");
 }
 @font-face {
   font-family: "en-biotif-bold";
@@ -66,10 +82,6 @@
   font-family: "fa-yekan-bakh-regular";
 }
 
-.biotif-light {
-  font-family: "en-biotif-light";
-}
-
 .biotif-bold {
   font-family: "en-biotif-bold";
 }
@@ -80,8 +92,7 @@
 
 * {
   font-size: 0.85rem;
-  font-family: "font1";
-  line-height: normal !important;
+  line-height: normal;
   letter-spacing: 0px !important;
 }
 
@@ -263,8 +274,99 @@ body {
   margin: 0 auto;
 }
 
+::selection {
+  background: #474747;
+  color: white;
+}
+
 #header {
   background-image: url("../../public/images/Background.png");
   background-size: cover;
-  background-position: top center;
+  background-position: 0 0;
+}
+
+.gradient-text {
+  color: transparent;
+  background: linear-gradient(180deg, #faaa3a, #fae3c3);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.gradient-text-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.gradient-text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: transparent;
+  mix-blend-mode: overlay;
+  background: linear-gradient(290deg, transparent, transparent 16%, #fff 18%, transparent 20%, transparent);
+  background-size: 200%;
+  background-position: 200% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: textOverlay 5s linear infinite;
+}
+
+@keyframes textOverlay {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+.glow-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  border-radius: 25px;
+  z-index: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glow-border::before {
+  content: "";
+  position: absolute;
+  width: 313%;
+  height: 313%;
+  background: conic-gradient(from 0deg, transparent 15deg, #ffe6c5 45deg, transparent 90deg);
+  animation: rotateGlow 3s linear infinite;
+  filter: blur(4px);
+  transform-origin: center center;
+}
+
+@keyframes rotateGlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#main-menu {
+  perspective: 1000px;
+}
+#main-menu #main-menu-content {
+  transform-style: preserve-3d;
+  transform-origin: top center;
+}
+
+#main-section {
+  perspective: 1000px;
+}
+#main-section #main-section-content {
+  transform-style: preserve-3d;
+  transform-origin: bottom center;
 }

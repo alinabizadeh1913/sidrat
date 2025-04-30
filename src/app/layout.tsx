@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" dir="ltr">
       <head>
         <link rel="icon" href="/logo/logo1.png" />
       </head>
