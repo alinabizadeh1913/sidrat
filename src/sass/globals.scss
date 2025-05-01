@@ -19,8 +19,12 @@ $bg-primary: #f8c279;
 $bg-secondary: #ead6b2;
 $bg-tertiary: #ffe4bf;
 $bg-linear: linear-gradient(135deg, #191919, #292b2e);
+$line-bg: linear-gradient(to bottom, #f8c279, #ac8654, #151616);
+$bg-overlay-1: linear-gradient(to bottom, #151616, #15161600, #151616);
+$button-hover: rgba(240, 197, 139, 0.03);
 
 $border-primary: rgba(255, 243, 226, 0.25);
+$border-secondary: #f8c279;
 
 // Utilities
 
@@ -40,7 +44,7 @@ $border-primary: rgba(255, 243, 226, 0.25);
   color: $text-quran;
 }
 
-.bg-body{
+.bg-body {
   background-color: $body-background;
 }
 
@@ -60,8 +64,25 @@ $border-primary: rgba(255, 243, 226, 0.25);
   background: $bg-linear;
 }
 
+.line-bg {
+  background: $line-bg;
+}
+
+.bg-overlay-1 {
+  background: $bg-overlay-1;
+}
+
+.button-hover:hover {
+  background-color: $button-hover;
+  box-shadow: 0 4px 6px rgba(248, 194, 121, 0.15);
+}
+
 .border-primary {
   border: 1px solid $border-primary;
+}
+
+.border-secondary {
+  border: 1px solid $border-secondary;
 }
 
 // Font Family
@@ -458,18 +479,29 @@ body {
 // Main Menu
 
 #main-menu {
-  perspective: 1000px;
-  #main-menu-content {
-    transform-style: preserve-3d;
-    transform-origin: top center;
-  }
+  transition: 0.4313s ease;
+  // .main-menu-inner{
+  // }
 }
 
 #main-section {
-  perspective: 1000px;
-  #main-section-content {
-    transform-style: preserve-3d;
-    transform-origin: bottom center;
+  transition: 0.4313s ease;
+  .main-section-inner {
+    .background {
+      .horizontal {
+        .horizontal-line {
+          width: 100%;
+          height: 2px;
+          background-color: rgba(255, 242, 218, 0.25);
+        }
+      }
+      .vertical {
+        .vertical-line {
+          width: 2px;
+          height: 100%;
+          background-color: rgba(255, 242, 218, 0.25);
+        }
+      }
+    }
   }
 }
-

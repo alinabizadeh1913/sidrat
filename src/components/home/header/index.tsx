@@ -6,15 +6,54 @@ import Typography from "@/components/layout/typography";
 import { Down } from "../../../../public/svg";
 import { useEffect, useState } from "react";
 import MainMenu from "./navbar/mainMenu";
-import MainSection from "../mainSection";
+import StoryOfSoil from "../mainSection/story_of_soil";
+import FourteenInfallibles from "../mainSection/fourteen_infallibles";
 
 const Header = () => {
   const [headerShow, setHeaderShow] = useState<boolean>(false);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const [isMainSectionOpen, setIsMainSectionOpen] = useState<boolean>(false);
+  const [scrollCount, setScrollCount] = useState(0);
+
   useEffect(() => {
     setHeaderShow(true);
   }, []);
+
+  useEffect(() => {
+    const handleWheel = (event: WheelEvent) => {
+      setScrollCount((prevCount) => {
+        if (event.deltaY > 0 && prevCount < 2) {
+          return prevCount + 1;
+        } else if (event.deltaY < 0 && prevCount > 0) {
+          return prevCount - 1;
+        }
+        return prevCount;
+      });
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      setScrollCount((prevCount) => {
+        if (event.key === "ArrowDown" && prevCount < 2) {
+          return prevCount + 1;
+        } else if (event.key === "ArrowUp" && prevCount > 0) {
+          return prevCount - 1;
+        }
+        return prevCount;
+      });
+    };
+
+    window.addEventListener("wheel", handleWheel);
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("wheel", handleWheel);
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
+  useEffect(() => {
+    console.log("🚀 تعداد دفعات چرخش موس یا فشردن دکمه:", scrollCount);
+  }, [scrollCount]);
+
   return (
     <Section
       identifier="header"
@@ -22,38 +61,37 @@ const Header = () => {
     >
       <HomeNavbar setIsMenuOpen={setIsMenuOpen} />
       <MainMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-      <MainSection
-        isMainSectionOpen={isMainSectionOpen}
-        setIsMainSectionOpen={setIsMainSectionOpen}
-      />
+      <StoryOfSoil scrollCount={scrollCount} />
+      <FourteenInfallibles scrollCount={scrollCount} />
+
       <div className="w-full h-full flex py-[36px]">
         <div
           className={`${
             headerShow
               ? "opacity-100 visible translate-y-0 scale-100"
               : "invisible opacity-0 translate-y-[50px] scale-90"
-          } max-w-[950px] w-full m-auto rounded-[25px] duration-500 delay-500 ease-out relative overflow-hidden group p-[2px]`}
+          } max-w-[920px] w-full m-auto rounded-[25px] duration-500 delay-500 ease-out relative overflow-hidden group p-[2px]`}
         >
           <div
             className={`${
               headerShow ? "opacity-100 visible" : "invisible opacity-0"
             } glow-border duration-500 delay-700 ease-out`}
           ></div>
-          <section className="w-full py-[30px] md:py-[36px] lg:py-[40px] xl:py-[48px]  px-[48px] md:px-[56px] lg:px-[64px] bg-linear relative z-10 rounded-[25px]">
+          <section className="w-full py-[30px] md:py-[36px] lg:py-[40px]  px-[48px] md:px-[56px] lg:px-[64px] bg-linear relative z-10 rounded-[25px]">
             <section className="flex justify-center">
               <section className="gradient-text-wrapper">
-                <div className="gradient-text text-[40px] text-center biotif-bold">
+                <div className="gradient-text text-[36px] text-center biotif-bold">
                   {/* سِدْرَةِ الْمُنْتَهَى */}
                   Sidrat Almuntaha
                 </div>
-                <div className="gradient-text-overlay text-[40px] text-center biotif-bold">
+                <div className="gradient-text-overlay text-[36px] text-center biotif-bold">
                   {/* سِدْرَةِ الْمُنْتَهَى */}
                   Sidrat Almuntaha
                 </div>
               </section>
             </section>
             <div>
-              <Typography className="text-tertiary text-[18px] biotif-regular my-4 md:my-6 lg:my-7 xl:my-9 leading-[32px]">
+              <Typography className="text-tertiary text-[18px] biotif-regular my-4 md:my-6 lg:my-7 leading-[32px]">
                 {/* آیا تا به حال فکر کرده‌ای که لذت‌های این دنیا، تنها نسخه‌ای کم‌عمق
               از چیزی بزرگ‌ترند؟ نه خیال، نه وعده، بلکه واقعیتی فراتر از ادراک…
               حکومتی که تنها به برگزیدگان حقیقت تعلق دارد؛ و اگر در مدار آن قرار
