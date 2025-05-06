@@ -1,3 +1,4 @@
+import { Arrow } from "../../../../public/svg";
 import Typography from "../typography";
 
 interface ButtonType {
@@ -7,14 +8,25 @@ interface ButtonType {
 
 const Button = ({ size, lang }: ButtonType) => {
   return (
-    <div className="button-hover cursor-pointer border-secondary h-[56px] px-[40px] rounded-[15px] mt-6 flex items-center w-fit duration-300 ease-in">
+    <div className="text-primary button-hover cursor-pointer border-secondary h-[48px] px-[24px] rounded-[10px] mt-8 flex items-center w-fit duration-300">
       <Typography
         className={`text-primary ${
-          lang == "ar" || lang == "fa" ? "yekan-regular" : "biotif-regular"
-        } text-[24px] pb-1`}
+          lang == "ar" || lang == "fa"
+            ? "yekan-regular"
+            : "biotif-regular pb-[6px]"
+        } text-[22px]`}
       >
-        {lang == "ar" ? "أكثر" : lang == "fa" ? "بیشتر" : "more"}
+        {lang == "ar"
+          ? "خطوة نحو الحقيقة"
+          : lang == "fa"
+          ? "گام به سوی حقیقت"
+          : "Step into the Truth"}
       </Typography>
+      <div
+        className={`icon-wrapper ${lang == "en" ? "-scale-x-100" : ""} flex`}
+      >
+        <Arrow />
+      </div>
     </div>
   );
 };

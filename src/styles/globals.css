@@ -3,7 +3,7 @@
 @tailwind utilities;
 @tailwind variants;
 .text-primary {
-  color: #ffbc65;
+  color: #fdc882;
 }
 
 .text-secondary {
@@ -46,9 +46,17 @@
   background: linear-gradient(to bottom, #151616, rgba(21, 22, 22, 0), #151616);
 }
 
+.button-hover .icon-wrapper {
+  margin-inline-start: 16px;
+  transition: 0.1313s ease;
+}
+
 .button-hover:hover {
-  background-color: rgba(240, 197, 139, 0.03);
+  background-color: rgba(240, 197, 139, 0.05);
   box-shadow: 0 4px 6px rgba(248, 194, 121, 0.15);
+}
+.button-hover:hover .icon-wrapper {
+  margin-inline-start: 24px;
 }
 
 .border-primary {
@@ -56,7 +64,7 @@
 }
 
 .border-secondary {
-  border: 1px solid #f8c279;
+  border: 1px solid #fdc882;
 }
 
 @font-face {
@@ -296,25 +304,32 @@ body {
   color: white;
 }
 
+.direction-rtl {
+  direction: rtl;
+}
+
+.direction-ltr {
+  direction: ltr;
+}
+
 #header {
   background-image: url("../../public/images/Background.png");
   background-size: cover;
   background-position: 0 0;
 }
 
-.gradient-text {
-  color: transparent;
-  background: linear-gradient(180deg, #faaa3a, #fae3c3);
-  -webkit-background-clip: text;
-  background-clip: text;
-}
-
 .gradient-text-wrapper {
   position: relative;
   display: inline-block;
+  user-select: none;
 }
-
-.gradient-text-overlay {
+.gradient-text-wrapper .gradient-text {
+  color: transparent;
+  background: linear-gradient(180deg, #fda52a, #fae3c3);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.gradient-text-wrapper .gradient-text-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -327,15 +342,30 @@ body {
   background-position: 200% 0;
   -webkit-background-clip: text;
   background-clip: text;
-  animation: textOverlay 5s linear infinite;
 }
 
-@keyframes textOverlay {
+.gradient-text-overlay-rtl {
+  animation: textOverlayRtl 3.5s linear infinite;
+}
+
+.gradient-text-overlay-ltr {
+  animation: textOverlayLtr 5s linear infinite;
+}
+
+@keyframes textOverlayLtr {
   0% {
     background-position: 200% 0;
   }
   100% {
     background-position: -200% 0;
+  }
+}
+@keyframes textOverlayRtl {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
   }
 }
 .glow-border {
@@ -352,7 +382,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-
 .glow-border::before {
   content: "";
   position: absolute;
@@ -377,7 +406,7 @@ body {
 }
 
 #main-section {
-  transition: 0.4313s ease;
+  transition: 0.313s ease;
 }
 #main-section .main-section-inner .background .horizontal .horizontal-line {
   width: 100%;

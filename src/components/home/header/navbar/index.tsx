@@ -42,7 +42,7 @@ const HomeNavbar = ({
             </div>
           </div>
           <div className="w-5/12 flex justify-end">
-            <div className="cursor-pointer" onClick={() => setIsMenuOpen(true)}>
+            <div className="cursor-pointer text-tertiary" onClick={() => setIsMenuOpen(true)}>
               <BurgerMenu />
             </div>
           </div>

@@ -7,11 +7,11 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { MainSectionDescription, MainSectionTitle } from "..";
 
-const FourteenInfallibles = ({ scrollCount }: { scrollCount: number }) => {
+const SuspendedHouse = ({ scrollCount }: { scrollCount: number }) => {
   const [active, setActive] = useState<boolean>(false);
 
   useEffect(() => {
-    if (scrollCount == 2) {
+    if (scrollCount == 4) {
       setActive(true);
     }
   }, [scrollCount]);
@@ -19,17 +19,17 @@ const FourteenInfallibles = ({ scrollCount }: { scrollCount: number }) => {
     <Section
       identifier="main-section"
       className={`${
-        scrollCount == 2
+        scrollCount == 4
           ? "visible opacity-100"
-          : scrollCount < 2
+          : scrollCount < 4
           ? "invisible opacity-0"
           : ""
       } absolute bottom-0 left-0 right-0 w-full h-full z-50 bg-body`}
     >
       <div
         className={`main-section-inner w-full h-full ${
-          scrollCount == 2
-            ? "visible opacity-100 duration-500"
+          scrollCount == 4
+            ? "visible opacity-100 delay-700 duration-500"
             : "invisible opacity-0 duration-500"
         }`}
         style={{
@@ -43,7 +43,7 @@ const FourteenInfallibles = ({ scrollCount }: { scrollCount: number }) => {
               <div className="content relative">
                 <div
                   className={`${
-                    scrollCount == 2 ? "h-full" : "h-0"
+                    scrollCount == 4 ? "h-full" : "h-0"
                   } absolute top-0 left-0 line-bg w-[3px] rounded-lg`}
                   style={{
                     transition: "height 0.5313s 0.7s ease",
@@ -51,7 +51,7 @@ const FourteenInfallibles = ({ scrollCount }: { scrollCount: number }) => {
                 ></div>
                 <div
                   className={`${
-                    scrollCount == 2
+                    scrollCount == 4
                       ? "opacity-100 visible"
                       : "opacity-0 invisible"
                   } circle-blur absolute top-0 left-[5%] w-[80px] h-[80px] blur-[90px] 2xl:top-[5%] 2xl:w-[70px] 2xl:h-[70px] 2xl:blur-[60px] bg-primary`}
@@ -61,15 +61,16 @@ const FourteenInfallibles = ({ scrollCount }: { scrollCount: number }) => {
                 ></div>
                 <div className="content-inner w-[500px] ms-[39px] relative z-20">
                   <MainSectionTitle lang="en">
-                    The Fourteen Infallibles
+                    The Suspended House
                   </MainSectionTitle>
                   <div className="w-[480px] description mt-1">
                     <MainSectionDescription lang="en">
-                      A profound exploration of the loftiest degrees of
-                      humanity: understanding the pure reality of the
-                      Infallibles (peace be upon them) - the eternal mirrors of
-                      the Divine Essence - and comprehending the station of
-                      divine vicegerency on the path toward knowing the Creator.
+                      Barzakh — a station between the transient world and the
+                      eternal resurrection; a place where the soul experiences a
+                      reflection of its ultimate destiny, tasting a part of its
+                      reward or punishment. It is not the end of the journey,
+                      but the first awakening of truth within, before the
+                      boundless judgment of the Day of Resurrection.
                     </MainSectionDescription>
                   </div>
                   <Button lang="en" />
@@ -79,7 +80,7 @@ const FourteenInfallibles = ({ scrollCount }: { scrollCount: number }) => {
                 <div className="overlay absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-overlay-1 z-[1]"></div>
                 <div
                   className={`${
-                    scrollCount == 2
+                    scrollCount == 4
                       ? "opacity-100 visible scale-100"
                       : "opacity-0 invisible scale-75"
                   } relative w-[440px] h-[560px]`}
@@ -88,8 +89,8 @@ const FourteenInfallibles = ({ scrollCount }: { scrollCount: number }) => {
                   }}
                 >
                   <Image
-                    src="/images/The Fourteen Infallibles/01.jpg"
-                    alt="fourteen-infallibles"
+                    src="/images/The Suspended House/01.png"
+                    alt="suspended-house"
                     objectFit="cover"
                     fill
                   />
@@ -102,4 +103,4 @@ const FourteenInfallibles = ({ scrollCount }: { scrollCount: number }) => {
     </Section>
   );
 };
-export default FourteenInfallibles;
+export default SuspendedHouse;

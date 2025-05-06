@@ -8,11 +8,16 @@ import { useEffect, useState } from "react";
 import MainMenu from "./navbar/mainMenu";
 import StoryOfSoil from "../mainSection/story_of_soil";
 import FourteenInfallibles from "../mainSection/fourteen_infallibles";
+import RiseOfDivineReign from "../mainSection/rise_of_divine_reign";
+import SuspendedHouse from "../mainSection/suspended_house";
+import { GradientText, MainText } from "@/components/layout/text";
+import DayOfJudgment from "../mainSection/day_of_judgment";
+import EternalFall from "../mainSection/eternal_fall";
 
 const Header = () => {
   const [headerShow, setHeaderShow] = useState<boolean>(false);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const [scrollCount, setScrollCount] = useState(0);
+  const [scrollCount, setScrollCount] = useState<number>(0);
 
   useEffect(() => {
     setHeaderShow(true);
@@ -21,7 +26,7 @@ const Header = () => {
   useEffect(() => {
     const handleWheel = (event: WheelEvent) => {
       setScrollCount((prevCount) => {
-        if (event.deltaY > 0 && prevCount < 2) {
+        if (event.deltaY > 0 && prevCount < 6) {
           return prevCount + 1;
         } else if (event.deltaY < 0 && prevCount > 0) {
           return prevCount - 1;
@@ -32,7 +37,7 @@ const Header = () => {
 
     const handleKeyDown = (event: KeyboardEvent) => {
       setScrollCount((prevCount) => {
-        if (event.key === "ArrowDown" && prevCount < 2) {
+        if (event.key === "ArrowDown" && prevCount < 6) {
           return prevCount + 1;
         } else if (event.key === "ArrowUp" && prevCount > 0) {
           return prevCount - 1;
@@ -63,6 +68,10 @@ const Header = () => {
       <MainMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <StoryOfSoil scrollCount={scrollCount} />
       <FourteenInfallibles scrollCount={scrollCount} />
+      <RiseOfDivineReign scrollCount={scrollCount} />
+      <SuspendedHouse scrollCount={scrollCount} />
+      <DayOfJudgment scrollCount={scrollCount} />
+      <EternalFall scrollCount={scrollCount} />
 
       <div className="w-full h-full flex py-[36px]">
         <div
@@ -79,19 +88,17 @@ const Header = () => {
           ></div>
           <section className="w-full py-[30px] md:py-[36px] lg:py-[40px]  px-[48px] md:px-[56px] lg:px-[64px] bg-linear relative z-10 rounded-[25px]">
             <section className="flex justify-center">
-              <section className="gradient-text-wrapper">
-                <div className="gradient-text text-[36px] text-center biotif-bold">
-                  {/* سِدْرَةِ الْمُنْتَهَى */}
-                  Sidrat Almuntaha
-                </div>
-                <div className="gradient-text-overlay text-[36px] text-center biotif-bold">
-                  {/* سِدْرَةِ الْمُنْتَهَى */}
-                  Sidrat Almuntaha
-                </div>
-              </section>
+              <GradientText weight="bold" lang="en" className="text-[36px]">
+                {/* سِدْرَةِ الْمُنْتَهَى */}
+                Sidrat Almuntaha
+              </GradientText>
             </section>
             <div>
-              <Typography className="text-tertiary text-[18px] biotif-regular my-4 md:my-6 lg:my-7 leading-[32px]">
+              <MainText
+                weight="regular"
+                lang="en"
+                className="text-tertiary text-[18px] my-4 md:my-6 lg:my-7 leading-[32px]"
+              >
                 {/* آیا تا به حال فکر کرده‌ای که لذت‌های این دنیا، تنها نسخه‌ای کم‌عمق
               از چیزی بزرگ‌ترند؟ نه خیال، نه وعده، بلکه واقعیتی فراتر از ادراک…
               حکومتی که تنها به برگزیدگان حقیقت تعلق دارد؛ و اگر در مدار آن قرار
@@ -114,7 +121,7 @@ const Header = () => {
                 where everything is impermanent, there is only one true
                 stability : the kingdom that belongs to God and his saints. And
                 outside of that, there is no destiny but wandering and falling…
-              </Typography>
+              </MainText>
             </div>
             <div className="flex justify-center items-center">
               <Down />
