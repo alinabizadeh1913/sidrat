@@ -12,7 +12,11 @@ const StoryOfSoil = ({ scrollCount }: { scrollCount: number }) => {
 
   useEffect(() => {
     if (scrollCount == 1) {
-      setActive(true);
+      setTimeout(() => {
+        setActive(true);
+      }, 500);
+    } else {
+      setActive(false);
     }
   }, [scrollCount]);
   return (
@@ -60,7 +64,7 @@ const StoryOfSoil = ({ scrollCount }: { scrollCount: number }) => {
                   }}
                 ></div>
                 <div className="content-inner w-[500px] ms-[39px] relative z-20">
-                  <MainSectionTitle lang="en">
+                  <MainSectionTitle active={active} lang="en">
                     The Story of Soil
                   </MainSectionTitle>
                   <div className="w-[480px] description mt-1">

@@ -3,9 +3,11 @@ import Typography from "@/components/layout/typography";
 const MainSectionTitle = ({
   children,
   lang,
+  active,
 }: {
   children: React.ReactNode;
   lang: "ar" | "fa" | "en";
+  active: boolean;
 }) => {
   return (
     <section className="gradient-text-wrapper">
@@ -18,9 +20,13 @@ const MainSectionTitle = ({
       </div>
       <div
         className={`gradient-text-overlay text-[40px] text-center ${
-          lang == "fa" || lang == "ar"
-            ? "yekan-black gradient-text-overlay-rtl"
-            : "biotif-bold gradient-text-overlay-ltr"
+          lang == "fa" || lang == "ar" ? "yekan-black" : "biotif-bold"
+        } ${
+          active && lang == "en"
+            ? "gradient-text-overlay-ltr"
+            : active && (lang == "fa" || lang == "ar")
+            ? "gradient-text-overlay-rtl"
+            : ""
         }`}
       >
         {children}

@@ -12,7 +12,11 @@ const EternalFall = ({ scrollCount }: { scrollCount: number }) => {
 
   useEffect(() => {
     if (scrollCount == 6) {
-      setActive(true);
+      setTimeout(() => {
+        setActive(true);
+      }, 500);
+    } else {
+      setActive(false);
     }
   }, [scrollCount]);
   return (
@@ -60,7 +64,9 @@ const EternalFall = ({ scrollCount }: { scrollCount: number }) => {
                   }}
                 ></div>
                 <div className="content-inner w-[500px] ms-[39px] relative z-20">
-                  <MainSectionTitle lang="en">Eternal Fall</MainSectionTitle>
+                  <MainSectionTitle active={active} lang="en">
+                    Eternal Fall
+                  </MainSectionTitle>
                   <div className="w-[480px] description mt-1">
                     <MainSectionDescription lang="en">
                       After the Day of Resurrection, a narrow bridge extends

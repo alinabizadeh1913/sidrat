@@ -12,7 +12,11 @@ const SuspendedHouse = ({ scrollCount }: { scrollCount: number }) => {
 
   useEffect(() => {
     if (scrollCount == 4) {
-      setActive(true);
+      setTimeout(() => {
+        setActive(true);
+      }, 500);
+    } else {
+      setActive(false);
     }
   }, [scrollCount]);
   return (
@@ -60,7 +64,7 @@ const SuspendedHouse = ({ scrollCount }: { scrollCount: number }) => {
                   }}
                 ></div>
                 <div className="content-inner w-[500px] ms-[39px] relative z-20">
-                  <MainSectionTitle lang="en">
+                  <MainSectionTitle active={active} lang="en">
                     The Suspended House
                   </MainSectionTitle>
                   <div className="w-[480px] description mt-1">
@@ -89,7 +93,7 @@ const SuspendedHouse = ({ scrollCount }: { scrollCount: number }) => {
                   }}
                 >
                   <Image
-                    src="/images/The Suspended House/01.png"
+                    src="/images/The Suspended House/02.jpg"
                     alt="suspended-house"
                     objectFit="cover"
                     fill

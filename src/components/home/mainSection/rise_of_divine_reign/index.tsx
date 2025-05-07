@@ -12,7 +12,11 @@ const RiseOfDivineReign = ({ scrollCount }: { scrollCount: number }) => {
 
   useEffect(() => {
     if (scrollCount == 3) {
-      setActive(true);
+      setTimeout(() => {
+        setActive(true);
+      }, 500);
+    } else {
+      setActive(false);
     }
   }, [scrollCount]);
   return (
@@ -60,18 +64,18 @@ const RiseOfDivineReign = ({ scrollCount }: { scrollCount: number }) => {
                   }}
                 ></div>
                 <div className="content-inner w-[500px] ms-[39px] relative z-20">
-                  <MainSectionTitle lang="en">
+                  <MainSectionTitle active={active} lang="en">
                     Rise of Divine Reign
                   </MainSectionTitle>
                   <div className="w-[480px] description mt-1">
                     <MainSectionDescription lang="en">
-                      After the Day of Resurrection, a narrow bridge extends
-                      over Hell, which only those whose essence is filled with
-                      the light of God and the Wilayah of Ahl al-Bayt (peace be
-                      upon them) will cross. Those among the people of
-                      monotheism who slip on it will be punished and then
-                      interceded for, but those whose hearts are devoid of the
-                      light of the Wilayah will fall into eternal damnation.
+                      The advent of the final Divine Proof and Guardian. The
+                      commencement of the absolute reign of the Purified
+                      Household on earth; the everlasting establishment of God’s
+                      sovereignty over all creation; the fulfillment of all
+                      anticipation; the unveiling of humanity’s long-concealed
+                      mysteries; the dawn of an era of ultimate perfection and
+                      transcendent beauty.
                     </MainSectionDescription>
                   </div>
                   <Button lang="en" />
@@ -90,7 +94,7 @@ const RiseOfDivineReign = ({ scrollCount }: { scrollCount: number }) => {
                   }}
                 >
                   <Image
-                    src="/images/Rise of Divine Reign/01.jpg"
+                    src="/images/Rise of Divine Reign/02.jpg"
                     alt="rise-of-rivine-reign"
                     objectFit="cover"
                     fill

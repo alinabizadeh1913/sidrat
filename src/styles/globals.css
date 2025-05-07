@@ -43,7 +43,7 @@
 }
 
 .bg-overlay-1 {
-  background: linear-gradient(to bottom, #151616, rgba(21, 22, 22, 0), #151616);
+  background: linear-gradient(to bottom, rgba(21, 22, 22, 0), rgba(21, 22, 22, 0.2196078431), #151616);
 }
 
 .button-hover .icon-wrapper {
