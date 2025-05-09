@@ -21,7 +21,7 @@ const HomeNavbar = ({
       style={{
         direction: "ltr",
       }}
-      className={` ${
+      className={`relative z-20 ${
         navbarShow ? "translate-y-0" : "translate-y-[-100%]"
       } duration-500 ease-in-out`}
     >

@@ -1,3 +1,6 @@
+"use client";
+
+import useStore from "@/store";
 import { Arrow } from "../../../../public/svg";
 import Typography from "../typography";
 
@@ -22,10 +25,8 @@ const Button = ({ size, lang }: ButtonType) => {
           ? "گام به سوی حقیقت"
           : "Step into the Truth"}
       </Typography>
-      <div
-        className={`icon-wrapper ${lang == "en" ? "-scale-x-100" : ""} flex`}
-      >
-        <Arrow />
+      <div className={`icon-wrapper flex`}>
+        <Arrow direction={lang == "en" ? "ltr" : "rtl"} />
       </div>
     </div>
   );

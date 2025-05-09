@@ -1,0 +1,163 @@
+{
+  "seasons": [
+    {
+      "id": 1,
+      "href": "story-of-soil",
+      "title": {
+        "translations": {
+          "ar": "قصة التراب",
+          "fa": "سرگذشت خاک",
+          "en": "The Story of Soil"
+        }
+      },
+      "description": {
+        "translations": {
+          "ar": "رحلة إلى أعماق أسرار الحياة ؛ لفهم أسباب المعاناة البشرية، وعدم المساواة، والقيود، في طريق كشف حقيقة الخلق الخفية وفتح مغاليق أسرار الوجود",
+          "fa": "سفری به ژرفای رازهای زندگی انسان؛ فهم چرایی رنج‌ها، نابرابری‌ها و محدودیت‌ها، در مسیر کشف حقیقت پنهان خلقت و گشودن قفل راز هستی",
+          "en": "A voyage into the depths of life’s mysteries: understanding the reasons behind human suffering, inequalities, and limitations, on the path to uncovering the hidden truth of creation and unlocking the secrets of existence."
+        }
+      },
+      "imageUrls": [
+        "pictures/01 Story of Soil/01.jpg",
+        "pictures/01 Story of Soil/02.jpg"
+      ]
+    },
+    {
+      "id": 2,
+      "href": "fourteen-infallibles",
+      "title": {
+        "translations": {
+          "ar": "المعصومون الأربعة عشر",
+          "fa": "برگزیدگان بی نقص",
+          "en": "The Fourteen Infallibles"
+        }
+      },
+      "description": {
+        "translations": {
+          "ar": "نظرة معمّقة إلى أسمى مراتب الإنسانية؛ فهم الحقيقة الخالصة للمعصومين (عليهم السلام) - المرايا الأبدية للذات الإلهية - وإدراك مقام الخلافة الإلهية في مسار معرفة الخالق",
+          "fa": "نگاهی عمیق به بلند ترین مراتب انسانیت؛ شناخت حقیقت ناب اهل بیت (ع) آیینه‌های بی‌ زوال پروردگار و درک جایگاه خلیفه‌ اللهی در مسیر شناخت پروردگار",
+          "en": "A profound exploration of the loftiest degrees of humanity: understanding the pure reality of the Infallibles (peace be upon them) — the eternal mirrors of the Divine Essence — and comprehending the station of divine vicegerency on the path toward knowing the Creator"
+        }
+      },
+      "imageUrls": [
+        "pictures/02 The Fourteen Infallibles/01.jpg",
+        "pictures/02 The Fourteen Infallibles/02.jpg"
+      ]
+    },
+    {
+      "id": 3,
+      "href": "rise-of-divine-reign",
+      "title": {
+        "translations": {
+          "ar": "قيام الدولة الكريمة",
+          "fa": "آغاز حکومت",
+          "en": "Rise of Divine Reign"
+        }
+      },
+      "description": {
+        "translations": {
+          "ar": "ظهور الحجة الإلهية والوليّ الأخير. بداية السلطنة المطلقة لآل العصمة على الأرض؛ التثبيت الأبدي لسيادة الله على جميع المخلوقات؛ تحقق جميع الآمال؛ انكشاف الأسرار الخفية وغير المسموعة للبشرية؛ طلوع عصر الكمال النهائي والجمال المتعالي",
+          "fa": "ظهور آخرین حجت و ولی خدا ، آغاز سلطنت مطلق سلسلهٔ عصمت در روی زمین ؛ تثبیت فرمانروایی حق بر عالم تا ابد ، پایان انتظار ، کنار رفتن پرده از رازهای ناشنیدهٔ بشر ؛ آغاز عصر تکامل و زیبایی های ورای تصور",
+          "en": "The advent of the final Divine Proof and Guardian. The commencement of the absolute reign of the Purified Household on earth; the everlasting establishment of God’s sovereignty over all creation; the fulfillment of all anticipation; the unveiling of humanity’s long-concealed mysteries; the dawn of an era of ultimate perfection and transcendent beauty"
+        }
+      },
+      "imageUrls": [
+        "pictures/03 Rise of Divine Reign/01.jpg",
+        "pictures/03 Rise of Divine Reign/02.jpg"
+      ]
+    },
+    {
+      "id": 4,
+      "href": "suspended-house",
+      "title": {
+        "translations": {
+          "ar": "البيت المعلّق",
+          "fa": "خانه معلق",
+          "en": "The Suspended House"
+        }
+      },
+      "description": {
+        "translations": {
+          "ar": "البرزخ، محطة بين الدنيا الفانية والقيامة الأبدية؛ موضع تذوق فيه الروح جزءًا من جزائها أو عقابها وتدرك لمحة من مصيرها النهائي. ليس نهاية الطريق، بل اليقظة الأولى للحقيقة في النفس قبل الحكم اللامتناهي ليوم القيامة",
+          "fa": "برزخ، ایستگاهی میان عالم فانی و قیامت جاودان؛ جایی که انسان پرتوی از سرنوشت خویش را درمی‌یابد. نه پایان راه، بلکه لرزش آغازین حقیقت در جان، پیش از فوران داوری بی‌پایان",
+          "en": "Barzakh — a station between the transient world and the eternal resurrection; a place where the soul experiences a reflection of its ultimate destiny, tasting a part of its reward or punishment. It is not the end of the journey, but the first awakening of truth within, before the boundless judgment of the Day of Resurrection"
+        }
+      },
+      "imageUrls": [
+        "pictures/04 The Suspended House/01.jpg",
+        "pictures/04 The Suspended House/02.jpg"
+      ]
+    },
+    {
+      "id": 5,
+      "href": "day-of-judgment",
+      "title": {
+        "translations": {
+          "ar": "يوم القيامة",
+          "fa": "پایان عالم",
+          "en": "The Day of Judgment"
+        }
+      },
+      "description": {
+        "translations": {
+          "ar": "انهيار العالم الفاني وبداية يوم الحساب الإلهي. نفخ الصور يهدم هيكل هذا العالم الزائل، ويُعرض الناس أمام الحقيقة الأبدية ومصيرهم الخالد",
+          "fa": "فروپاشی جهان فانی و آغاز روز داوری الهی. نفخ صور، ساختار این دنیای زوال‌پذیر را در هم می‌ریزد و انسان‌ها در برابر حقیقت جاودانه و سرنوشت ابدی‌شان قرار می‌گیرند",
+          "en": "The collapse of the mortal world and the beginning of the Day of Divine Judgment. The blowing of the Trumpet (Ṣūr) shatters the structure of this perishable world, and humanity is brought before the eternal truth and their everlasting destiny"
+        }
+      },
+      "imageUrls": [
+        "pictures/05 The Day of Judgment/01.jpg",
+        "pictures/05 The Day of Judgment/02.jpg",
+        "pictures/05 The Day of Judgment/03.jpg",
+        "pictures/05 The Day of Judgment/04.jpg"
+      ]
+    },
+    {
+      "id": 6,
+      "href": "eternal-fall",
+      "title": {
+        "translations": {
+          "ar": "السقوط الأبدي",
+          "fa": "سقوط بی پایان",
+          "en": "Eternal Fall"
+        }
+      },
+      "description": {
+        "translations": {
+          "ar": "بعد القيامة، يمتدّ صراطٌ دقيقٌ فوق جهنم، لا يعبُره إلا من كان جوهره نورَ الله و ولايَةَ أهل البيت (ع). من زلَّ فيه من أهل التوحيد يُعذَّب ثم يُشفَع، وأما من خلا قلبه من نور الولاية فيسقُط سقوطاً أبدياً",
+          "fa": "پس از قیامت، پلی باریک بر فراز جهنم گسترده می‌شود که تنها کسانی از آن عبور می‌کنند که ذاتشان از نور الهی و ولایت اهل‌بیت (ع) پر باشد. هر کسی از اهل توحید بلغزد، عذاب می ‌بیند و سپس شفاعت می‌شود؛ اما کسی که ذاتش از نور الهی تهی باشد، دچار سقوط ابدی می‌شود",
+          "en": "After the Day of Resurrection, a narrow bridge extends over Hell, which only those whose essence is filled with the light of God and the Wilayah of Ahl al-Bayt (peace be upon them) will cross. Those among the people of monotheism who slip on it will be punished and then interceded for, but those whose hearts are devoid of the light of the Wilayah will fall into eternal damnation"
+        }
+      },
+      "imageUrls": [
+        "pictures/06 Eternal Fall/01.jpg",
+        "pictures/06 Eternal Fall/02.jpg",
+        "pictures/06 Eternal Fall/03.jpg"
+      ]
+    },
+    {
+      "id": 7,
+      "href": "endless_serenity",
+      "title": {
+        "translations": {
+          "ar": "السلام الخالد",
+          "fa": "آرامش ابدی",
+          "en": "Endless Serenity"
+        }
+      },
+      "description": {
+        "translations": {
+          "ar": "الذين يجتازون صراط الآخرة يدخلون أرضًا طاهرة وخالدة، وهي الجنة؛ أرض مليئة باللذّات الكاملة وسكينة تفوق الخيال، تحت ظل السيادة الإلهية. مكان زاخر بالتنوع والنعيم الذي لا نهاية له ",
+          "fa": "کسانی که از پل صراط عبور می کنند وارد سرزمینی پاک و ابدی یعنی بهشت می شوند؛ سرزمینی لبریز از لذت‌هایی بی‌نقص و آرامشی فراتر از تصور، در زیر سایه حکومت و فرمانروایی الهی. مکانی سرشار از تنوع و شگفتی‌های بی‌پایان",
+          "en": "Those who cross the Bridge of the Hereafter enter a pure and everlasting land — Paradise. A realm filled with flawless delights and serenity beyond imagination, under the shadow of divine sovereignty. A place full of diversity and endless wonders"
+        }
+      },
+      "imageUrls": [
+        "pictures/07 Endless Serenity/01.jpg",
+        "pictures/07 Endless Serenity/02.jpg",
+        "pictures/07 Endless Serenity/03.jpg",
+        "pictures/07 Endless Serenity/04.jpg"
+      ]
+    }
+  ]
+}

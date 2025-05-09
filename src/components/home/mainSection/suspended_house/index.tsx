@@ -5,10 +5,13 @@ import Section from "@/components/layout/section";
 import Typography from "@/components/layout/typography";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { seasons } from "@/database/seasons.json";
 import { MainSectionDescription, MainSectionTitle } from "..";
+import useStore from "@/store";
 
 const SuspendedHouse = ({ scrollCount }: { scrollCount: number }) => {
   const [active, setActive] = useState<boolean>(false);
+  const { language } = useStore();
 
   useEffect(() => {
     if (scrollCount == 4) {
@@ -46,38 +49,41 @@ const SuspendedHouse = ({ scrollCount }: { scrollCount: number }) => {
             <div className="flex items-center justify-between">
               <div className="content relative">
                 <div
-                  className={`${
+                  className={`${language == "en" ? "left-0" : "right-0"} ${
                     scrollCount == 4 ? "h-full" : "h-0"
-                  } absolute top-0 left-0 line-bg w-[3px] rounded-lg`}
+                  } absolute top-0 line-bg w-[3px] rounded-lg`}
                   style={{
                     transition: "height 0.5313s 0.7s ease",
                   }}
                 ></div>
                 <div
-                  className={`${
+                  className={`${language == "en" ? "left-[5%]" : "right-[5%]"} ${
                     scrollCount == 4
                       ? "opacity-100 visible"
                       : "opacity-0 invisible"
-                  } circle-blur absolute top-0 left-[5%] w-[80px] h-[80px] blur-[90px] 2xl:top-[5%] 2xl:w-[70px] 2xl:h-[70px] 2xl:blur-[60px] bg-primary`}
+                  } circle-blur absolute top-0 w-[80px] h-[80px] blur-[90px] 2xl:top-[5%] 2xl:w-[70px] 2xl:h-[70px] 2xl:blur-[60px] bg-primary`}
                   style={{
                     transition: "all 0.5313s 0.8s ease",
                   }}
                 ></div>
                 <div className="content-inner w-[500px] ms-[39px] relative z-20">
-                  <MainSectionTitle active={active} lang="en">
-                    The Suspended House
+                  <MainSectionTitle active={active} lang={language}>
+                    {language == "ar"
+                      ? seasons[3].title.translations.ar
+                      : language == "fa"
+                      ? seasons[3].title.translations.fa
+                      : seasons[3].title.translations.en}
                   </MainSectionTitle>
                   <div className="w-[480px] description mt-1">
-                    <MainSectionDescription lang="en">
-                      Barzakh — a station between the transient world and the
-                      eternal resurrection; a place where the soul experiences a
-                      reflection of its ultimate destiny, tasting a part of its
-                      reward or punishment. It is not the end of the journey,
-                      but the first awakening of truth within, before the
-                      boundless judgment of the Day of Resurrection.
+                    <MainSectionDescription lang={language}>
+                      {language == "ar"
+                        ? seasons[3].description.translations.ar
+                        : language == "fa"
+                        ? seasons[3].description.translations.fa
+                        : seasons[3].description.translations.en}
                     </MainSectionDescription>
                   </div>
-                  <Button lang="en" />
+                  <Button lang={language} />
                 </div>
               </div>
               <figure className="images relative">
@@ -93,7 +99,7 @@ const SuspendedHouse = ({ scrollCount }: { scrollCount: number }) => {
                   }}
                 >
                   <Image
-                    src="/images/The Suspended House/02.jpg"
+                    src={`${process.env.NEXT_PUBLIC_UPLOADS_BASE_URL}${seasons[3].imageUrls[0]}`}
                     alt="suspended-house"
                     objectFit="cover"
                     fill

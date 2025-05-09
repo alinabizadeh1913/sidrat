@@ -405,7 +405,7 @@ body {
 // Header
 
 #header {
-  background-image: url("../../public/images/Background.png");
+  background-image: url("../../public/uploads/pictures/Background.png");
   background-size: cover;
   background-position: 0 0;
 }
@@ -510,8 +510,6 @@ body {
 
 #main-menu {
   transition: 0.4313s ease;
-  // .main-menu-inner{
-  // }
 }
 
 #main-section {
@@ -533,5 +531,25 @@ body {
         }
       }
     }
+  }
+}
+
+// Loading
+
+#loading {
+  .spinner {
+    border: 10px solid $text-primary;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    animation: spinner 1.313s infinite linear;
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

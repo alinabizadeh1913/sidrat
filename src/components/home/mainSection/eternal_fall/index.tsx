@@ -6,9 +6,12 @@ import Typography from "@/components/layout/typography";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { MainSectionDescription, MainSectionTitle } from "..";
+import { seasons } from "@/database/seasons.json";
+import useStore from "@/store";
 
 const EternalFall = ({ scrollCount }: { scrollCount: number }) => {
   const [active, setActive] = useState<boolean>(false);
+  const { language } = useStore();
 
   useEffect(() => {
     if (scrollCount == 6) {
@@ -46,39 +49,43 @@ const EternalFall = ({ scrollCount }: { scrollCount: number }) => {
             <div className="flex items-center justify-between">
               <div className="content relative">
                 <div
-                  className={`${
+                  className={`${language == "en" ? "left-0" : "right-0"} ${
                     scrollCount == 6 ? "h-full" : "h-0"
-                  } absolute top-0 left-0 line-bg w-[3px] rounded-lg`}
+                  } absolute top-0 line-bg w-[3px] rounded-lg`}
                   style={{
                     transition: "height 0.5313s 0.7s ease",
                   }}
                 ></div>
                 <div
                   className={`${
+                    language == "en" ? "left-[5%]" : "right-[5%]"
+                  } ${
                     scrollCount == 6
                       ? "opacity-100 visible"
                       : "opacity-0 invisible"
-                  } circle-blur absolute top-0 left-[5%] w-[80px] h-[80px] blur-[90px] 2xl:top-[5%] 2xl:w-[70px] 2xl:h-[70px] 2xl:blur-[60px] bg-primary`}
+                  } circle-blur absolute top-0 w-[80px] h-[80px] blur-[90px] 2xl:top-[5%] 2xl:w-[70px] 2xl:h-[70px] 2xl:blur-[60px] bg-primary`}
                   style={{
                     transition: "all 0.5313s 0.8s ease",
                   }}
                 ></div>
                 <div className="content-inner w-[500px] ms-[39px] relative z-20">
-                  <MainSectionTitle active={active} lang="en">
-                    Eternal Fall
+                  <MainSectionTitle active={active} lang={language}>
+                    {language == "ar"
+                      ? seasons[5].title.translations.ar
+                      : language == "fa"
+                      ? seasons[5].title.translations.fa
+                      : seasons[5].title.translations.en}
                   </MainSectionTitle>
                   <div className="w-[480px] description mt-1">
-                    <MainSectionDescription lang="en">
-                      After the Day of Resurrection, a narrow bridge extends
-                      over Hell, which only those whose essence is filled with
-                      the light of God and the Wilayah of Ahl al-Bayt (peace be
-                      upon them) will cross. Those among the people of
-                      monotheism who slip on it will be punished and then
-                      interceded for, but those whose hearts are devoid of the
-                      light of the Wilayah will fall into eternal damnation.
+                    <MainSectionDescription lang={language}>
+                      {language == "ar"
+                        ? seasons[5].description.translations.ar
+                        : language == "fa"
+                        ? seasons[5].description.translations.fa
+                        : seasons[5].description.translations.en}
                     </MainSectionDescription>
                   </div>
-                  <Button lang="en" />
+                  <Button lang={language} />
                 </div>
               </div>
               <figure className="images relative">
@@ -94,7 +101,7 @@ const EternalFall = ({ scrollCount }: { scrollCount: number }) => {
                   }}
                 >
                   <Image
-                    src="/images/Eternal Fall/01.png"
+                    src={`${process.env.NEXT_PUBLIC_UPLOADS_BASE_URL}${seasons[5].imageUrls[0]}`}
                     alt="eternal-fall"
                     objectFit="cover"
                     fill

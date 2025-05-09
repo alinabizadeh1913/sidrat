@@ -313,7 +313,7 @@ body {
 }
 
 #header {
-  background-image: url("../../public/images/Background.png");
+  background-image: url("../../public/uploads/pictures/Background.png");
   background-size: cover;
   background-position: 0 0;
 }
@@ -417,4 +417,20 @@ body {
   width: 2px;
   height: 100%;
   background-color: rgba(255, 242, 218, 0.25);
+}
+
+#loading .spinner {
+  border: 10px solid #fdc882;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  animation: spinner 1.313s infinite linear;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

@@ -9,18 +9,12 @@ import { MainSectionDescription, MainSectionTitle } from "..";
 import { seasons } from "@/database/seasons.json";
 import useStore from "@/store";
 
-const StoryOfSoil = ({
-  scrollCount,
-  setScrollCount,
-}: {
-  scrollCount: number;
-  setScrollCount: React.Dispatch<React.SetStateAction<number>>;
-}) => {
+const EndlessSerenity = ({ scrollCount }: { scrollCount: number }) => {
   const [active, setActive] = useState<boolean>(false);
   const { language } = useStore();
 
   useEffect(() => {
-    if (scrollCount == 1) {
+    if (scrollCount == 7) {
       setTimeout(() => {
         setActive(true);
       }, 500);
@@ -32,16 +26,16 @@ const StoryOfSoil = ({
     <Section
       identifier="main-section"
       className={`${
-        scrollCount == 1
+        scrollCount == 7
           ? "visible opacity-100"
-          : scrollCount < 1
+          : scrollCount < 7
           ? "invisible opacity-0"
           : ""
       } absolute bottom-0 left-0 right-0 w-full h-full z-50 bg-body`}
     >
       <div
         className={`main-section-inner w-full h-full ${
-          scrollCount == 1
+          scrollCount == 7
             ? "visible opacity-100 delay-700 duration-500"
             : "invisible opacity-0 duration-500"
         }`}
@@ -56,7 +50,7 @@ const StoryOfSoil = ({
               <div className="content relative">
                 <div
                   className={`${language == "en" ? "left-0" : "right-0"} ${
-                    scrollCount == 1 ? "h-full" : "h-0"
+                    scrollCount == 7 ? "h-full" : "h-0"
                   } absolute top-0 line-bg w-[3px] rounded-lg`}
                   style={{
                     transition: "height 0.5313s 0.7s ease",
@@ -66,10 +60,10 @@ const StoryOfSoil = ({
                   className={`${
                     language == "en" ? "left-[5%]" : "right-[5%]"
                   } ${
-                    scrollCount == 1
+                    scrollCount == 7
                       ? "opacity-100 visible"
                       : "opacity-0 invisible"
-                  } circle-blur absolute top-0 left-[5%] w-[80px] h-[80px] blur-[90px] 2xl:top-[5%] 2xl:w-[70px] 2xl:h-[70px] 2xl:blur-[60px] bg-primary`}
+                  } circle-blur absolute top-0 w-[80px] h-[80px] blur-[90px] 2xl:top-[5%] 2xl:w-[70px] 2xl:h-[70px] 2xl:blur-[60px] bg-primary`}
                   style={{
                     transition: "all 0.5313s 0.8s ease",
                   }}
@@ -77,22 +71,18 @@ const StoryOfSoil = ({
                 <div className="content-inner w-[500px] ms-[39px] relative z-20">
                   <MainSectionTitle active={active} lang={language}>
                     {language == "ar"
-                      ? seasons[0].title.translations.ar
+                      ? seasons[6].title.translations.ar
                       : language == "fa"
-                      ? seasons[0].title.translations.fa
-                      : seasons[0].title.translations.en}
+                      ? seasons[6].title.translations.fa
+                      : seasons[6].title.translations.en}
                   </MainSectionTitle>
-                  <div
-                    className={`${
-                      language == "en" ? "w-[480px]" : "w-[400px]"
-                    } description mt-1`}
-                  >
+                  <div className="w-[460px] description mt-1">
                     <MainSectionDescription lang={language}>
                       {language == "ar"
-                        ? seasons[0].description.translations.ar
+                        ? seasons[6].description.translations.ar
                         : language == "fa"
-                        ? seasons[0].description.translations.fa
-                        : seasons[0].description.translations.en}
+                        ? seasons[6].description.translations.fa
+                        : seasons[6].description.translations.en}
                     </MainSectionDescription>
                   </div>
                   <Button lang={language} />
@@ -102,7 +92,7 @@ const StoryOfSoil = ({
                 <div className="overlay absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-overlay-1 z-[1]"></div>
                 <div
                   className={`${
-                    scrollCount == 1
+                    scrollCount == 7
                       ? "opacity-100 visible scale-100"
                       : "opacity-0 invisible scale-75"
                   } relative w-[440px] h-[560px]`}
@@ -111,8 +101,8 @@ const StoryOfSoil = ({
                   }}
                 >
                   <Image
-                    src={`${process.env.NEXT_PUBLIC_UPLOADS_BASE_URL}${seasons[0].imageUrls[0]}`}
-                    alt="story-of-soil"
+                    src={`${process.env.NEXT_PUBLIC_UPLOADS_BASE_URL}${seasons[6].imageUrls[0]}`}
+                    alt="endless-serenity"
                     objectFit="cover"
                     fill
                   />
@@ -125,4 +115,4 @@ const StoryOfSoil = ({
     </Section>
   );
 };
-export default StoryOfSoil;
+export default EndlessSerenity;

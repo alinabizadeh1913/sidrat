@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "../styles/globals.css";
 import Script from "next/script";
+import { settings } from "../database/settings.json";
 
 const Font = Poppins({
   subsets: ["latin"],
@@ -22,7 +23,11 @@ export default function RootLayout({
   return (
     <html lang="en" dir="ltr">
       <head>
-        <link rel="icon" type="image/png" href="/logo/favicon.png" />
+        <link
+          rel="icon"
+          type="image/png"
+          href={`${process.env.NEXT_PUBLIC_UPLOADS_BASE_URL}${settings.faviconUrl}`}
+        />
       </head>
       <body className={`${Font.className} antialiased`}>
         <Layout>{children}</Layout>

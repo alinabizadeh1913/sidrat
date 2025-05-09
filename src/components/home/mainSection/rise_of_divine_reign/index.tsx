@@ -5,11 +5,13 @@ import Section from "@/components/layout/section";
 import Typography from "@/components/layout/typography";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { seasons } from "@/database/seasons.json";
 import { MainSectionDescription, MainSectionTitle } from "..";
+import useStore from "@/store";
 
 const RiseOfDivineReign = ({ scrollCount }: { scrollCount: number }) => {
   const [active, setActive] = useState<boolean>(false);
-
+  const { language } = useStore();
   useEffect(() => {
     if (scrollCount == 3) {
       setTimeout(() => {
@@ -46,39 +48,43 @@ const RiseOfDivineReign = ({ scrollCount }: { scrollCount: number }) => {
             <div className="flex items-center justify-between">
               <div className="content relative">
                 <div
-                  className={`${
+                  className={`${language == "en" ? "left-0" : "right-0"} ${
                     scrollCount == 3 ? "h-full" : "h-0"
-                  } absolute top-0 left-0 line-bg w-[3px] rounded-lg`}
+                  } absolute top-0 line-bg w-[3px] rounded-lg`}
                   style={{
                     transition: "height 0.5313s 0.7s ease",
                   }}
                 ></div>
                 <div
                   className={`${
+                    language == "en" ? "left-[5%]" : "right-[5%]"
+                  } ${
                     scrollCount == 3
                       ? "opacity-100 visible"
                       : "opacity-0 invisible"
-                  } circle-blur absolute top-0 left-[5%] w-[80px] h-[80px] blur-[90px] 2xl:top-[5%] 2xl:w-[70px] 2xl:h-[70px] 2xl:blur-[60px] bg-primary`}
+                  } circle-blur absolute top-0 w-[80px] h-[80px] blur-[90px] 2xl:top-[5%] 2xl:w-[70px] 2xl:h-[70px] 2xl:blur-[60px] bg-primary`}
                   style={{
                     transition: "all 0.5313s 0.8s ease",
                   }}
                 ></div>
                 <div className="content-inner w-[500px] ms-[39px] relative z-20">
-                  <MainSectionTitle active={active} lang="en">
-                    Rise of Divine Reign
+                  <MainSectionTitle active={active} lang={language}>
+                    {language == "ar"
+                      ? seasons[2].title.translations.ar
+                      : language == "fa"
+                      ? seasons[2].title.translations.fa
+                      : seasons[2].title.translations.en}
                   </MainSectionTitle>
                   <div className="w-[480px] description mt-1">
-                    <MainSectionDescription lang="en">
-                      The advent of the final Divine Proof and Guardian. The
-                      commencement of the absolute reign of the Purified
-                      Household on earth; the everlasting establishment of God’s
-                      sovereignty over all creation; the fulfillment of all
-                      anticipation; the unveiling of humanity’s long-concealed
-                      mysteries; the dawn of an era of ultimate perfection and
-                      transcendent beauty.
+                    <MainSectionDescription lang={language}>
+                      {language == "ar"
+                        ? seasons[2].description.translations.ar
+                        : language == "fa"
+                        ? seasons[2].description.translations.fa
+                        : seasons[2].description.translations.en}
                     </MainSectionDescription>
                   </div>
-                  <Button lang="en" />
+                  <Button lang={language} />
                 </div>
               </div>
               <figure className="images relative">
@@ -94,7 +100,7 @@ const RiseOfDivineReign = ({ scrollCount }: { scrollCount: number }) => {
                   }}
                 >
                   <Image
-                    src="/images/Rise of Divine Reign/02.jpg"
+                    src={`${process.env.NEXT_PUBLIC_UPLOADS_BASE_URL}${seasons[2].imageUrls[1]}`}
                     alt="rise-of-rivine-reign"
                     objectFit="cover"
                     fill

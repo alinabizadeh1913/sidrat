@@ -1,0 +1,19 @@
+{
+  "navbar": {},
+  "header": {
+    "title": {
+      "translations": {
+        "ar": "سِدْرَةِ الْمُنْتَهَى",
+        "fa": "سِدْرَةِ الْمُنْتَهَى",
+        "en": "Sidrat Almuntaha"
+      }
+    },
+    "text": {
+      "translations": {
+        "ar": "هل فكرت يومًا أن ملذات هذا العالم ما هي إلا نسخة سطحية من شيء أعظم؟ ليس خيالاً، وليس وعداً، بل حقيقة تتجاوز الإدراك... حكومة تنتمي فقط إلى مختاري الحقيقة؛ وإذا كنت في مداره فلن يكون للمعاناة أي معنى. نحن نتحدث عن عالم حيث الوقت لا ينتهي أبدًا وإدراكك ينمو إلى ما لا نهاية. لكن هذا المسار ليس خيار الجميع. لأنه في الملكوت الأبدي، فقط أولئك الذين تجاوزوا المظاهر ووصلوا إلى عمق المعنى سيجدون طريقهم. في عالم حيث كل شيء غير مستقر، هناك استقرار حقيقي واحد فقط: المملكة التي تنتمي إلى الله وقديسيه. وخارج ذلك لا يوجد مصير إلا التيه والسقوط...",
+        "fa": "آیا تا به حال فکر کرده‌ای که لذت‌های این دنیا، تنها نسخه‌ای کم‌عمق از چیزی بزرگ‌ترند؟ نه خیال، نه وعده، بلکه واقعیتی فراتر از ادراک… حکومتی که تنها به برگزیدگان حقیقت تعلق دارد؛ و اگر در مدار آن قرار بگیری، هیچ رنجی دیگر معنایی نخواهد داشت.  ما اینجا از جهانی حرف می‌زنیم که در آن، زمان به پایان نمی‌رسد و ادراک تو تا بی‌نهایت رشد می‌کند.  اما این مسیر، انتخاب هر کسی نیست. زیرا در پادشاهی ابدی، تنها آنانی راه می‌یابند که از ظاهر عبور کرده‌اند و به عمق معنا رسیده‌اند.  در جهانی که هر چیزی ناپایدار است، تنها یک ثبات حقیقی وجود دارد: سلطنتی که از آنِ خدا و اولیای اوست. و خارج از آن، جز سرگردانی و سقوط، سرنوشتی نیست ...",
+        "en": "Have you ever thought that the pleasures of this world are only a shallow version of something greater? Not a fantasy, not a promise, but a reality beyond comprehension… a kingdom that belongs only to the chosen ones of truth; and if you are in its orbit, no suffering will have any meaning. We are talking here about a world where time never ends and your perception grows infinitely. But this path is not everyone’s choice. For in the eternal kingdom, only those who have transcended appearances and reached the depths of meaning will find their way. In a world where everything is impermanent, there is only one true stability : the kingdom that belongs to God and his saints. And outside of that, there is no destiny but wandering and falling…"
+      }
+    }
+  }
+}

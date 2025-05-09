@@ -1,15 +1,27 @@
+"use client";
+
+import useStore from "@/store";
 import { Search } from "../../../../../../public/svg";
 
 const SearchBox = () => {
+  const { language } = useStore();
   return (
     <>
-      <div className="text-tertiary search w-[180px] md:w-[150px] lg:w-[180px] h-[40px] flex items-center rounded-[10px] border-primary px-3">
+      <div
+        className={`${
+          language == "en" ? "direction-ltr" : "direction-rtl"
+        } text-tertiary search w-[180px] md:w-[150px] lg:w-[180px] h-[40px] flex items-center rounded-[10px] border-primary px-3`}
+      >
         <input
           type="text"
-          className="w-full biotif-regular h-full border-none outline-none bg-transparent placeholder-[#FFE4BF] text-tertiary pe-[12px]"
-          placeholder="Search"
+          className={`w-full ${
+            language == "en" ? "biotif-regular" : "yekan-regular"
+          } h-full border-none outline-none bg-transparent placeholder-[#FFE4BF] text-tertiary pe-[12px] text-[14px]`}
+          placeholder={`${
+            language == "ar" ? "بحث" : language == "fa" ? "جستجو" : "Search"
+          }`}
         />
-        <Search />
+        <Search direction={language == "en" ? "ltr" : "rtl"} />
       </div>
     </>
   );
