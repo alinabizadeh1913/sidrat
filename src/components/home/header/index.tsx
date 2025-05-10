@@ -102,64 +102,55 @@ const Header = () => {
       <HomeNavbar setIsMenuOpen={setIsMenuOpen} />
       <Grid zIndex={25} />
       <MainMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-
       <Seasons scrollCount={scrollCount} setScrollCount={setScrollCount} />
 
       <div className="w-full h-full flex py-[36px]">
         <div
-          className={`${
-            headerShow
-              ? "opacity-100 visible translate-y-0 scale-100"
-              : "invisible opacity-0 translate-y-[50px] scale-90"
-          } max-w-[1000px] w-full m-auto rounded-[25px] duration-500 delay-500 ease-out relative z-[30] overflow-hidden group p-[2px]`}
+          className={`max-w-[1000px] h-[500px] w-full m-auto rounded-[25px] duration-500 delay-500 ease-out relative z-[30] overflow-hidden group p-[2px]`}
         >
           <div
-            className={`${
-              headerShow ? "opacity-100 visible" : "invisible opacity-0"
-            } glow-border duration-500 delay-700 ease-out`}
+            className={`glow-border duration-500 delay-700 ease-out h-full`}
           ></div>
           <section
-            className={`w-full ${
-              language == "en"
-                ? "py-[32px] md:py-[36px] lg:py-[40px]"
-                : "py-[36px] md:py-[40px] lg:py-[44px]"
-            }  px-[48px] md:px-[56px] lg:px-[64px] bg-linear relative z-10 rounded-[25px]`}
+            className={`w-full h-full px-[48px] md:px-[56px] lg:px-[64px] bg-linear relative z-10 rounded-[25px] flex items-center`}
           >
-            <section className="flex justify-center">
-              <GradientText
-                weight="bold"
-                lang={language}
-                className={`${
-                  language == "en" ? "text-[36px]" : "text-[32px]"
-                }`}
-              >
-                {language == "ar"
-                  ? header.title.translations.ar
-                  : language == "fa"
-                  ? header.title.translations.fa
-                  : header.title.translations.en}
-              </GradientText>
+            <section className="w-full">
+              <section className="flex justify-center">
+                <GradientText
+                  weight="bold"
+                  lang={language}
+                  className={`${
+                    language == "en" ? "text-[36px]" : "text-[32px]"
+                  }`}
+                >
+                  {language == "ar"
+                    ? header.title.translations.ar
+                    : language == "fa"
+                    ? header.title.translations.fa
+                    : header.title.translations.en}
+                </GradientText>
+              </section>
+              <div>
+                <MainText
+                  weight="regular"
+                  lang={language}
+                  className={`text-tertiary  ${
+                    language == "en"
+                      ? "my-4 md:my-6 lg:my-7 text-[19px] leading-[32px]"
+                      : "my-5 md:my-7 lg:my-8 text-[18px] leading-[34px]"
+                  }`}
+                >
+                  {language == "ar"
+                    ? header.text.translations.ar
+                    : language == "fa"
+                    ? header.text.translations.fa
+                    : header.text.translations.en}
+                </MainText>
+              </div>
+              <div className="flex justify-center items-center">
+                <Down />
+              </div>
             </section>
-            <div>
-              <MainText
-                weight="regular"
-                lang={language}
-                className={`text-tertiary  ${
-                  language == "en"
-                    ? "my-4 md:my-6 lg:my-7 text-[19px] leading-[32px]"
-                    : "my-5 md:my-7 lg:my-8 text-[18px] leading-[34px]"
-                }`}
-              >
-                {language == "ar"
-                  ? header.text.translations.ar
-                  : language == "fa"
-                  ? header.text.translations.fa
-                  : header.text.translations.en}
-              </MainText>
-            </div>
-            <div className="flex justify-center items-center">
-              <Down />
-            </div>
           </section>
         </div>
       </div>
