@@ -1,5 +1,6 @@
-import Section from "../layout/section";
-import Typography from "../layout/typography";
+import InteractiveGrid from "../layout/grid";
+import Grid from "../layout/grid";
+import LineGrid from "../layout/grid";
 import Header from "./header";
 
 const HomeComponents = () => {

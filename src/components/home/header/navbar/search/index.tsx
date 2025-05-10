@@ -10,7 +10,7 @@ const SearchBox = () => {
       <div
         className={`${
           language == "en" ? "direction-ltr" : "direction-rtl"
-        } text-tertiary search w-[180px] md:w-[150px] lg:w-[180px] h-[40px] flex items-center rounded-[10px] border-primary px-3`}
+        } text-tertiary search w-[180px] md:w-[150px] lg:w-[180px] h-[40px] flex items-center rounded-[10px] border-primary px-3 relative z-[30]`}
       >
         <input
           type="text"

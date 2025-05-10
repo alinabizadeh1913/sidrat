@@ -67,6 +67,14 @@
   border: 1px solid #fdc882;
 }
 
+.border-primary-2 {
+  border: 2px solid rgba(255, 243, 226, 0.25);
+}
+
+.border-secondary-2 {
+  border: 2px solid #fdc882;
+}
+
 @font-face {
   font-family: "ar-uthman";
   src: url("../../public/fonts/ar/uthman/uthman.woff2") format("woff2"), url("../../public/fonts/ar/uthman/uthman.woff") format("woff"), url("../../public/fonts/ar/uthman/uthman.ttf") format("truetype"), url("../../public/fonts/ar/uthman/uthman.eot") format("embedded-opentype"), url("../../public/fonts/ar/uthman/uthman.otf") format("opentype");

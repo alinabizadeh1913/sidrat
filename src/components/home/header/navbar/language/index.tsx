@@ -34,7 +34,7 @@ const ChangeLanguage = () => {
       <div
         className={`change-language w-[89px] ${
           language == "en" ? "h-[38px]" : "h-[40px]"
-        } rounded-[10px] border-primary relative`}
+        } rounded-[10px] border-primary relative z-[30]`}
         ref={languageRef}
       >
         <div

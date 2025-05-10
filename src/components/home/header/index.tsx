@@ -2,7 +2,6 @@
 
 import Section from "@/components/layout/section";
 import HomeNavbar from "./navbar";
-import Typography from "@/components/layout/typography";
 import { Down } from "../../../../public/svg";
 import { useEffect, useState } from "react";
 import MainMenu from "./navbar/mainMenu";
@@ -16,6 +15,8 @@ import EternalFall from "../mainSection/eternal_fall";
 import { header } from "@/database/header.json";
 import EndlessSerenity from "../mainSection/endless_serenity";
 import useStore from "@/store";
+import Grid from "@/components/layout/grid";
+import Seasons from "../mainSection/seasons";
 
 const Header = () => {
   const [headerShow, setHeaderShow] = useState<boolean>(false);
@@ -96,17 +97,13 @@ const Header = () => {
   return (
     <Section
       identifier="header"
-      className="flex flex-col h-screen md:px-[40px] lg:px-[64px] overflow-hidden relative"
+      className="flex flex-col h-screen md:px-[40px] lg:px-[64px] overflow-hidden relative z-20"
     >
       <HomeNavbar setIsMenuOpen={setIsMenuOpen} />
+      <Grid zIndex={25} />
       <MainMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-      <StoryOfSoil scrollCount={scrollCount} setScrollCount={setScrollCount} />
-      <FourteenInfallibles scrollCount={scrollCount} />
-      <RiseOfDivineReign scrollCount={scrollCount} />
-      <SuspendedHouse scrollCount={scrollCount} />
-      <DayOfJudgment scrollCount={scrollCount} />
-      <EternalFall scrollCount={scrollCount} />
-      <EndlessSerenity scrollCount={scrollCount} />
+
+      <Seasons scrollCount={scrollCount} setScrollCount={setScrollCount} />
 
       <div className="w-full h-full flex py-[36px]">
         <div
@@ -114,7 +111,7 @@ const Header = () => {
             headerShow
               ? "opacity-100 visible translate-y-0 scale-100"
               : "invisible opacity-0 translate-y-[50px] scale-90"
-          } max-w-[920px] w-full m-auto rounded-[25px] duration-500 delay-500 ease-out relative overflow-hidden group p-[2px]`}
+          } max-w-[1000px] w-full m-auto rounded-[25px] duration-500 delay-500 ease-out relative z-[30] overflow-hidden group p-[2px]`}
         >
           <div
             className={`${
