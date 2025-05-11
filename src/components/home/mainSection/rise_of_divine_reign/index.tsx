@@ -1,11 +1,10 @@
 "use client";
 
 import Button from "@/components/layout/button";
-import Section from "@/components/layout/section";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import seasonsData from "@/database/seasons.json";
 import { MainSectionDescription, MainSectionTitle } from "..";
+import seasonsData from "@/database/seasons.json";
 import useStore from "@/store";
 
 const { seasons } = seasonsData;
@@ -122,7 +121,7 @@ const RiseOfDivineReign = ({
                 }}
               >
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_UPLOADS_BASE_URL}${seasons[2].imageUrls[0]}`}
+                  src={`${process.env.NEXT_PUBLIC_UPLOADS_BASE_URL}${seasons[2].imageUrls[1]}`}
                   alt="story-of-soil"
                   objectFit="cover"
                   fill

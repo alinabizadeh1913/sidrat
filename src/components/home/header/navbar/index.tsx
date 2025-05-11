@@ -5,7 +5,10 @@ import Image from "next/image";
 import { BurgerMenu, Globe, Search } from "../../../../../public/svg";
 import { useEffect, useState } from "react";
 import ChangeLanguage from "./language";
+import settingsData from "@/database/settings.json";
 import SearchBox from "./search";
+
+const { settings } = settingsData;
 
 const HomeNavbar = ({
   setIsMenuOpen,
@@ -31,7 +34,7 @@ const HomeNavbar = ({
           <div className="w-2/12 flex justify-center">
             <div className="w-[48px] h-[56px] relative">
               <Image
-                src={"/logo/logo1.png"}
+                src={`${process.env.NEXT_PUBLIC_UPLOADS_BASE_URL}${settings.logoUrl}`}
                 alt="sidrat-almuntaha-logo"
                 fill
                 objectFit="contain"

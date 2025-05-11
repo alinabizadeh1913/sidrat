@@ -1,5 +1,7 @@
 {
   "settings": {
-    "faviconUrl": "pictures/logo/favicon.png"
+    "faviconUrl": "pictures/logo/favicon.png",
+    "logoUrl": "pictures/logo/logo.png",
+    "profileUrl": "pictures/logo/profile.png"
   }
 }

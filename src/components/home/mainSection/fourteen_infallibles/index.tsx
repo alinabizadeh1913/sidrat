@@ -1,7 +1,6 @@
 "use client";
 
 import Button from "@/components/layout/button";
-import Section from "@/components/layout/section";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { MainSectionDescription, MainSectionTitle } from "..";

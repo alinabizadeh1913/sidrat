@@ -5,18 +5,15 @@ import HomeNavbar from "./navbar";
 import { Down } from "../../../../public/svg";
 import { useEffect, useState } from "react";
 import MainMenu from "./navbar/mainMenu";
-import StoryOfSoil from "../mainSection/story_of_soil";
-import FourteenInfallibles from "../mainSection/fourteen_infallibles";
-import RiseOfDivineReign from "../mainSection/rise_of_divine_reign";
-import SuspendedHouse from "../mainSection/suspended_house";
 import { GradientText, MainText } from "@/components/layout/text";
-import DayOfJudgment from "../mainSection/day_of_judgment";
-import EternalFall from "../mainSection/eternal_fall";
 import headerData from "@/database/header.json";
-import EndlessSerenity from "../mainSection/endless_serenity";
 import useStore from "@/store";
 import Grid from "@/components/layout/grid";
 import Seasons from "../mainSection/seasons";
+import Image from "next/image";
+import settingsData from "@/database/settings.json";
+
+const { settings } = settingsData;
 
 const { header } = headerData;
 
@@ -107,14 +104,12 @@ const Header = () => {
       <Seasons scrollCount={scrollCount} setScrollCount={setScrollCount} />
 
       <div className="w-full h-full flex py-[36px]">
-        <div
-          className={`max-w-[1000px] h-[470px] w-full m-auto rounded-[25px] ease-out relative z-[30] overflow-hidden group p-[2px]`}
-        >
-          <div
-            className={`glow-border duration-500 delay-700 ease-out h-full`}
-          ></div>
+        <div className={`max-w-[1200px] h-[470px] w-full m-auto`}>
+          {/* <div
+            className={`glow-bofrder duration-500 delay-700 ease-out h-full`}
+          ></div> */}
           <section
-            className={`w-full h-full px-[48px] md:px-[56px] lg:px-[64px] bg-linear relative z-10 rounded-[25px] flex items-center`}
+            className={`w-full h-full px-[48px] md:px-[56px] lg:px-[64px] rounded-[25px] flex items-center`}
           >
             <section className="w-full">
               <section className="flex justify-center">
@@ -122,7 +117,7 @@ const Header = () => {
                   weight="bold"
                   lang={language}
                   className={`${
-                    language == "en" ? "text-[36px]" : "text-[32px]"
+                    language == "en" ? "text-[40px]" : "text-[40px]"
                   }`}
                 >
                   {language == "ar"
@@ -136,10 +131,10 @@ const Header = () => {
                 <MainText
                   weight="regular"
                   lang={language}
-                  className={`text-tertiary  ${
+                  className={`text-tertiary text-center ${
                     language == "en"
-                      ? "my-4 md:my-6 lg:my-7 text-[19px] leading-[32px]"
-                      : "my-5 md:my-7 lg:my-8 text-[18px] leading-[34px]"
+                      ? "my-4 md:my-5 lg:my-6 text-[22px] leading-[40px]"
+                      : "my-4 md:my-5 lg:my-6 text-[20px] leading-[40px]"
                   }`}
                 >
                   {language == "ar"

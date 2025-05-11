@@ -376,7 +376,7 @@ body {
 .special-container {
   max-width: 1440px;
   width: 100%;
-  margin: 0 auto;
+  margin: auto;
 }
 
 ::selection {
@@ -395,9 +395,10 @@ body {
 // Header
 
 #header {
-  background-image: url("../../public/uploads/pictures/Background.png");
-  background-size: cover;
-  background-position: 0 0;
+  // background-image: url("../../public/uploads/pictures/Background.png");
+  // background-size: cover;
+  // background-position: 0 0;
+  background: linear-gradient(135deg,#181a1a,#151616);
 }
 
 .gradient-text-wrapper {
@@ -528,9 +529,8 @@ body {
 
 #loading {
   .spinner {
-    border: 10px solid $text-primary;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
+    border: 6px solid $text-primary;
+    border-top: 6px solid transparent;
     animation: spinner 1.313s infinite linear;
   }
 }

@@ -1,11 +1,10 @@
 "use client";
 
 import Button from "@/components/layout/button";
-import Section from "@/components/layout/section";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import seasonsData from "@/database/seasons.json";
 import { MainSectionDescription, MainSectionTitle } from "..";
+import seasonsData from "@/database/seasons.json";
 import useStore from "@/store";
 
 const { seasons } = seasonsData;
