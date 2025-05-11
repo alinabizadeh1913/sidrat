@@ -12,11 +12,13 @@ import SuspendedHouse from "../mainSection/suspended_house";
 import { GradientText, MainText } from "@/components/layout/text";
 import DayOfJudgment from "../mainSection/day_of_judgment";
 import EternalFall from "../mainSection/eternal_fall";
-import { header } from "@/database/header.json";
+import headerData from "@/database/header.json";
 import EndlessSerenity from "../mainSection/endless_serenity";
 import useStore from "@/store";
 import Grid from "@/components/layout/grid";
 import Seasons from "../mainSection/seasons";
+
+const { header } = headerData;
 
 const Header = () => {
   const [headerShow, setHeaderShow] = useState<boolean>(false);
@@ -106,7 +108,7 @@ const Header = () => {
 
       <div className="w-full h-full flex py-[36px]">
         <div
-          className={`max-w-[1000px] h-[500px] w-full m-auto rounded-[25px] duration-500 delay-500 ease-out relative z-[30] overflow-hidden group p-[2px]`}
+          className={`max-w-[1000px] h-[470px] w-full m-auto rounded-[25px] ease-out relative z-[30] overflow-hidden group p-[2px]`}
         >
           <div
             className={`glow-border duration-500 delay-700 ease-out h-full`}

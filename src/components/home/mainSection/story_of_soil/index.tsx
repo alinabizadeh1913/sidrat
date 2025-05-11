@@ -5,9 +5,11 @@ import Section from "@/components/layout/section";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { MainSectionDescription, MainSectionTitle } from "..";
-import { seasons } from "@/database/seasons.json";
+import seasonsData from "@/database/seasons.json";
 import useStore from "@/store";
 import Grid from "@/components/layout/grid";
+
+const { seasons } = seasonsData;
 
 const StoryOfSoil = ({
   scrollCount,

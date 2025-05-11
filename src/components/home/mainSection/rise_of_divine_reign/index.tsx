@@ -4,9 +4,11 @@ import Button from "@/components/layout/button";
 import Section from "@/components/layout/section";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { seasons } from "@/database/seasons.json";
+import seasonsData from "@/database/seasons.json";
 import { MainSectionDescription, MainSectionTitle } from "..";
 import useStore from "@/store";
+
+const { seasons } = seasonsData;
 
 const RiseOfDivineReign = ({
   scrollCount,

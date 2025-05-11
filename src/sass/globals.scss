@@ -8,7 +8,6 @@
 // Variables
 
 $body-background: #151616;
-// $test : linear-gradient(to bottom, rgba(21, 22, 22,1), rgba(21, 22, 22,0.8),rgba(21, 22, 22,1));
 $text-linear: linear-gradient(180deg, #fda52a, #fae3c3);
 $text-primary: #fdc882;
 $text-secondary: #ead6b2;
@@ -108,74 +107,57 @@ $border-secondary: #fdc882;
 // Ar
 @font-face {
   font-family: "ar-uthman";
-  src: url("../../public/fonts/ar/uthman/uthman.woff2") format("woff2"),
-    url("../../public/fonts/ar/uthman/uthman.woff") format("woff"),
-    url("../../public/fonts/ar/uthman/uthman.ttf") format("truetype"),
-    url("../../public/fonts/ar/uthman/uthman.eot") format("embedded-opentype"),
-    url("../../public/fonts/ar/uthman/uthman.otf") format("opentype");
+  src: url("/fonts/ar/uthman/uthman.woff2") format("woff2"),
+    url("/fonts/ar/uthman/uthman.woff") format("woff"),
+    url("/fonts/ar/uthman/uthman.ttf") format("truetype"),
+    url("/fonts/ar/uthman/uthman.eot") format("embedded-opentype"),
+    url("/fonts/ar/uthman/uthman.otf") format("opentype");
 }
 
 // Fa
 @font-face {
   font-family: "fa-yekan-bakh-black";
-  src: url("../../public/fonts/fa-ar/YekanBlack/YekanBakh-Black.woff2")
-      format("woff2"),
-    url("../../public/fonts/fa-ar/YekanBlack/YekanBakh-Black.woff")
-      format("woff"),
-    url("../../public/fonts/fa-ar/YekanBlack/YekanBakh-Black.ttf")
-      format("truetype"),
-    url("../../public/fonts/fa-ar/YekanBlack/YekanBakh-Black.eot")
+  src: url("/fonts/fa-ar/YekanBlack/YekanBakh-Black.woff2") format("woff2"),
+    url("/fonts/fa-ar/YekanBlack/YekanBakh-Black.woff") format("woff"),
+    url("/fonts/fa-ar/YekanBlack/YekanBakh-Black.ttf") format("truetype"),
+    url("/fonts/fa-ar/YekanBlack/YekanBakh-Black.eot")
       format("embedded-opentype"),
-    url("../../public/fonts/fa-ar/YekanBlack/YekanBakh-Black.otf")
-      format("opentype");
+    url("/fonts/fa-ar/YekanBlack/YekanBakh-Black.otf") format("opentype");
 }
 @font-face {
   font-family: "fa-yekan-bakh-bold";
-  src: url("../../public/fonts/fa-ar/YekanBold/YekanBakh-Bold.woff2")
-      format("woff2"),
-    url("../../public/fonts/fa-ar/YekanBold/YekanBakh-Bold.woff") format("woff"),
-    url("../../public/fonts/fa-ar/YekanBold/YekanBakh-Bold.ttf")
-      format("truetype"),
-    url("../../public/fonts/fa-ar/YekanBold/YekanBakh-Bold.eot")
-      format("embedded-opentype"),
-    url("../../public/fonts/fa-ar/YekanBold/YekanBakh-Bold.otf")
-      format("opentype");
+  src: url("/fonts/fa-ar/YekanBold/YekanBakh-Bold.woff2") format("woff2"),
+    url("/fonts/fa-ar/YekanBold/YekanBakh-Bold.woff") format("woff"),
+    url("/fonts/fa-ar/YekanBold/YekanBakh-Bold.ttf") format("truetype"),
+    url("/fonts/fa-ar/YekanBold/YekanBakh-Bold.eot") format("embedded-opentype"),
+    url("/fonts/fa-ar/YekanBold/YekanBakh-Bold.otf") format("opentype");
 }
 @font-face {
   font-family: "fa-yekan-bakh-regular";
-  src: url("../../public/fonts/fa-ar/YekanRegular/YekanBakh-Regular.woff2")
-      format("woff2"),
-    url("../../public/fonts/fa-ar/YekanRegular/YekanBakh-Regular.woff")
-      format("woff"),
-    url("../../public/fonts/fa-ar/YekanRegular/YekanBakh-Regular.ttf")
-      format("truetype"),
-    url("../../public/fonts/fa-ar/YekanRegular/YekanBakh-Regular.eot")
+  src: url("/fonts/fa-ar/YekanRegular/YekanBakh-Regular.woff2") format("woff2"),
+    url("/fonts/fa-ar/YekanRegular/YekanBakh-Regular.woff") format("woff"),
+    url("/fonts/fa-ar/YekanRegular/YekanBakh-Regular.ttf") format("truetype"),
+    url("/fonts/fa-ar/YekanRegular/YekanBakh-Regular.eot")
       format("embedded-opentype"),
-    url("../../public/fonts/fa-ar/YekanRegular/YekanBakh-Regular.otf")
-      format("opentype");
+    url("/fonts/fa-ar/YekanRegular/YekanBakh-Regular.otf") format("opentype");
 }
 
 // En
 @font-face {
   font-family: "en-biotif-bold";
-  src: url("../../public/fonts/en/BiotifBold/BiotifBold.woff2") format("woff2"),
-    url("../../public/fonts/en/BiotifBold/BiotifBold.woff") format("woff"),
-    url("../../public/fonts/en/BiotifBold/BiotifBold.ttf") format("truetype"),
-    url("../../public/fonts/en/BiotifBold/BiotifBold.eot")
-      format("embedded-opentype"),
-    url("../../public/fonts/en/BiotifBold/BiotifBold.otf") format("opentype");
+  src: url("/fonts/en/BiotifBold/BiotifBold.woff2") format("woff2"),
+    url("/fonts/en/BiotifBold/BiotifBold.woff") format("woff"),
+    url("/fonts/en/BiotifBold/BiotifBold.ttf") format("truetype"),
+    url("/fonts/en/BiotifBold/BiotifBold.eot") format("embedded-opentype"),
+    url("/fonts/en/BiotifBold/BiotifBold.otf") format("opentype");
 }
 @font-face {
   font-family: "en-biotif-regular";
-  src: url("../../public/fonts/en/BiotifRegular/BiotifRegular.woff2")
-      format("woff2"),
-    url("../../public/fonts/en/BiotifRegular/BiotifRegular.woff") format("woff"),
-    url("../../public/fonts/en/BiotifRegular/BiotifRegular.ttf")
-      format("truetype"),
-    url("../../public/fonts/en/BiotifRegular/BiotifRegular.eot")
-      format("embedded-opentype"),
-    url("../../public/fonts/en/BiotifRegular/BiotifRegular.otf")
-      format("opentype");
+  src: url("/fonts/en/BiotifRegular/BiotifRegular.woff2") format("woff2"),
+    url("/fonts/en/BiotifRegular/BiotifRegular.woff") format("woff"),
+    url("/fonts/en/BiotifRegular/BiotifRegular.ttf") format("truetype"),
+    url("/fonts/en/BiotifRegular/BiotifRegular.eot") format("embedded-opentype"),
+    url("/fonts/en/BiotifRegular/BiotifRegular.otf") format("opentype");
 }
 
 .uthman {

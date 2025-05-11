@@ -3,7 +3,9 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "../styles/globals.css";
 import Script from "next/script";
-import { settings } from "../database/settings.json";
+import settingsData from "../database/settings.json";
+
+const { settings } = settingsData;
 
 const Font = Poppins({
   subsets: ["latin"],
