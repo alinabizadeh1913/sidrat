@@ -8,7 +8,7 @@ interface Point {
 }
 
 const GRID_SPACING = 120; // فاصله خطوط
-const RADIUS = 120; // شعاع تاثیر موس
+const RADIUS = 130; // شعاع تاثیر موس
 const BASE_OPACITY = 0.008;
 const ACTIVE_OPACITY = 0.213;
 const TRANSITION_TIME = 313; // ms
