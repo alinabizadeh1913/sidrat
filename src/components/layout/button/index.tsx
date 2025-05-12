@@ -1,6 +1,6 @@
 "use client";
 
-import useStore from "@/store";
+import { useStore } from "@/store";
 import { Arrow } from "../../../../public/svg";
 import Typography from "../typography";
 
