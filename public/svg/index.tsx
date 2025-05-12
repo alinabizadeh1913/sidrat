@@ -48,8 +48,8 @@ export const Globe = () => {
 export const Search = ({ direction }: { direction: "ltr" | "rtl" }) => {
   return (
     <svg
-      width="14"
-      height="14"
+      width="18"
+      height="18"
       viewBox="0 0 14 14"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

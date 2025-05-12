@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { MainSectionDescription, MainSectionTitle } from "..";
 import seasonsData from "@/database/seasons.json";
-import useStore from "@/store";
+import { useStore } from "@/store";
 
 const { seasons } = seasonsData;
 

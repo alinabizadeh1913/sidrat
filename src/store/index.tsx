@@ -1,61 +1,41 @@
-// import { create } from "zustand";
-
-// interface LanguageStore {
-//   language: "ar" | "fa" | "en";
-//   direction: "rtl" | "ltr";
-//   randomTimeout: number;
-//   setLanguage: (lang: LanguageStore["language"]) => void;
-// }
-
-// const useStore = create<LanguageStore>((set) => ({
-//   language: "ar",
-//   direction: "rtl",
-//   randomTimeout: Math.floor(Math.random() * (2000 - 1000 + 1)) + 1000,
-
-//   setLanguage: (lang) =>
-//     set({
-//       language: lang,
-//       direction: lang === "en" ? "ltr" : "rtl",
-//       randomTimeout: Math.floor(Math.random() * (2000 - 1000 + 1)) + 1000,
-//     }),
-// }));
-
-// export default useStore;
-
 import { create } from "zustand";
 
 interface LanguageStore {
   language: "ar" | "fa" | "en";
   direction: "rtl" | "ltr";
-  randomTimeout: number;
-  isLoadingShow: boolean;
   setLanguage: (lang: LanguageStore["language"]) => void;
+}
+
+interface LoadingState {
+  progress: number;
+  randomDuration: number;
+  isLoadingShow: boolean;
+  setProgress: (value: number) => void;
+  setRandomDuration: (ms: number) => void;
+  setIsLoadingShow: (show: boolean) => void;
 }
 
 const useStore = create<LanguageStore>((set) => ({
   language: "ar",
   direction: "rtl",
-  randomTimeout: Math.floor(Math.random() * (2000 - 1000 + 1)) + 1000,
-  isLoadingShow: false,
 
   setLanguage: (lang) => {
-    set({ isLoadingShow: true });
-
-    const newRandomTimeout =
-      Math.floor(Math.random() * (2000 - 1000 + 1)) + 1000;
-
     setTimeout(() => {
       set({
         language: lang,
         direction: lang === "en" ? "ltr" : "rtl",
-        randomTimeout: newRandomTimeout,
       });
     }, 300);
-
-    setTimeout(() => {
-      set({ isLoadingShow: false });
-    }, newRandomTimeout + 200);
   },
 }));
 
-export default useStore;
+const useLoadingStore = create<LoadingState>((set) => ({
+  progress: 0,
+  randomDuration: 0,
+  isLoadingShow: true,
+  setProgress: (value) => set({ progress: value }),
+  setRandomDuration: (ms) => set({ randomDuration: ms }),
+  setIsLoadingShow: (show) => set({ isLoadingShow: show }),
+}));
+
+export { useStore, useLoadingStore };

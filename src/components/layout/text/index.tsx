@@ -1,19 +1,19 @@
 import Typography from "../typography";
 
 interface TextProps {
+  children?: React.ReactNode;
+  className?: string;
   weight?: "regular" | "bold";
   tagName?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span";
-  className?: string;
-  children?: React.ReactNode;
   lang?: "ar" | "fa" | "en";
   quran?: boolean;
 }
 
 const MainText = ({
   children,
+  className,
   weight,
   tagName,
-  className,
   lang,
   quran,
 }: TextProps) => {
@@ -55,5 +55,6 @@ const GradientText = ({ children, weight, className, lang }: TextProps) => {
     </>
   );
 };
+
 
 export { MainText, GradientText };

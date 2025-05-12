@@ -4,7 +4,7 @@ import Typography from "@/components/layout/typography";
 import { Globe } from "../../../../../../public/svg";
 import { MainText } from "@/components/layout/text";
 import { useEffect, useRef, useState } from "react";
-import useStore from "@/store";
+import { useStore } from "@/store";
 
 const ChangeLanguage = () => {
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
