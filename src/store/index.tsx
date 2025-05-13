@@ -15,6 +15,11 @@ interface LoadingState {
   setIsLoadingShow: (show: boolean) => void;
 }
 
+interface HeaderStore {
+  isHeaderShow: boolean;
+  setIsHeaderShow: (show: boolean) => void;
+}
+
 const useStore = create<LanguageStore>((set) => ({
   language: "ar",
   direction: "rtl",
@@ -38,4 +43,9 @@ const useLoadingStore = create<LoadingState>((set) => ({
   setIsLoadingShow: (show) => set({ isLoadingShow: show }),
 }));
 
-export { useStore, useLoadingStore };
+const useHeaderStore = create<HeaderStore>((set) => ({
+  isHeaderShow: false,
+  setIsHeaderShow: (show) => set({ isHeaderShow: show }),
+}));
+
+export { useStore, useLoadingStore, useHeaderStore };

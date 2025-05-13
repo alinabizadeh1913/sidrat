@@ -1,11 +1,12 @@
 "use client";
 
 import Button from "@/components/layout/button";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { MainSectionDescription, MainSectionTitle } from "..";
 import seasonsData from "@/database/seasons.json";
 import { useStore } from "@/store";
+import ImageFadeSlider from "../seasons/imageFadeSlider";
+import Link from "next/link";
 
 const { seasons } = seasonsData;
 
@@ -25,7 +26,9 @@ const SuspendedHouse = ({
         setActive(true);
       }, 500);
     } else {
-      setActive(false);
+      setTimeout(() => {
+        setActive(false);
+      }, 500);
     }
   }, [scrollCount]);
   return (
@@ -106,28 +109,26 @@ const SuspendedHouse = ({
                       : seasons[3].description.translations.en}
                   </MainSectionDescription>
                 </div>
-                <Button lang={language} />
+                <Link href={seasons[3].href}>
+                  <Button lang={language} />
+                </Link>
               </div>
             </div>
-            <figure className="images relative z-[50]">
-              <div className="overlay absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-overlay-1 z-[1]"></div>
-              <div
-                className={`${
-                  scrollCount == 4
-                    ? "opacity-100 visible scale-100"
-                    : "opacity-0 invisible scale-75"
-                } relative w-[440px] h-[560px]`}
-                style={{
-                  transition: "all 0.5313s 0.55s ease",
-                }}
-              >
-                <Image
-                  src={`${process.env.NEXT_PUBLIC_UPLOADS_BASE_URL}${seasons[3].imageUrls[0]}`}
-                  alt="story-of-soil"
-                  objectFit="cover"
-                  fill
-                />
-              </div>
+            <figure
+              className={`${
+                scrollCount == 4
+                  ? "opacity-100 visible scale-100"
+                  : "opacity-0 invisible scale-75"
+              } images relative z-[50] overflow-hidden w-[440px] h-[560px]`}
+              style={{
+                transition: "all 0.5313s 0.55s ease",
+              }}
+            >
+              <ImageFadeSlider
+                imageUrls={seasons[3].imageUrls}
+                isActive={active}
+                alt="suspended-house"
+              />
             </figure>
           </div>
         </div>

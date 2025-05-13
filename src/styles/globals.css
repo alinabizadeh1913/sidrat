@@ -43,7 +43,7 @@
 }
 
 .bg-overlay-1 {
-  background: linear-gradient(to bottom, rgba(21, 22, 22, 0), rgba(21, 22, 22, 0.2196078431), #151616);
+  background: linear-gradient(to bottom, rgba(21, 22, 22, 0), rgba(21, 22, 22, 0), #151616);
 }
 
 .button-hover .icon-wrapper {
@@ -438,4 +438,20 @@ body {
   100% {
     transform: rotate(360deg);
   }
+}
+.embla__slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.embla__slide.is-selected {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
 }

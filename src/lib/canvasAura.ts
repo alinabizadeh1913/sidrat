@@ -7,8 +7,8 @@ const defaultConfig: AuraSettings = {
   particleColor: "rgba(255, 240, 200, 0.6)",
   minSpeed: 0.2,
   maxSpeed: 0.8,
-  minSize: 1.2,
-  maxSize: 3.5,
+  minSize: 1.5,
+  maxSize: 4,
   glowIntensity: 15,
 };
 

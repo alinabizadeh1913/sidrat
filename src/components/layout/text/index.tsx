@@ -22,7 +22,7 @@ const MainText = ({
       tagName={tagName}
       className={`${className} ${
         lang == "ar" || lang == "fa" ? `yekan-${weight}` : `biotif-${weight}`
-      } ${quran ? "uthman" : ""}`}
+      } ${quran ? "uthman" : ""} select-none`}
     >
       {children}
     </Typography>
@@ -32,7 +32,7 @@ const MainText = ({
 const GradientText = ({ children, weight, className, lang }: TextProps) => {
   return (
     <>
-      <section className="gradient-text-wrapper">
+      <section className="gradient-text-wrapper select-none">
         <div
           className={`${className} gradient-text text-center ${
             lang == "fa" || lang == "ar"
@@ -55,6 +55,5 @@ const GradientText = ({ children, weight, className, lang }: TextProps) => {
     </>
   );
 };
-
 
 export { MainText, GradientText };

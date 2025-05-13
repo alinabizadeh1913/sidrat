@@ -11,7 +11,7 @@ interface ButtonType {
 
 const Button = ({ size, lang }: ButtonType) => {
   return (
-    <div className="text-primary button-hover cursor-pointer border-secondary h-[48px] px-[24px] rounded-[10px] mt-8 flex items-center w-fit duration-300 relative z-[50]">
+    <div className="text-primary button-hover cursor-pointer border-secondary h-[48px] px-[24px] rounded-[10px] mt-8 flex items-center w-fit duration-300 relative z-[50] select-none">
       <Typography
         className={`text-primary ${
           lang == "ar" || lang == "fa"

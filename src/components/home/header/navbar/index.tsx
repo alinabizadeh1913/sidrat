@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import ChangeLanguage from "./language";
 import settingsData from "@/database/settings.json";
 import SearchBox from "./search";
+import { useHeaderStore } from "@/store";
 
 const { settings } = settingsData;
 
@@ -16,6 +17,7 @@ const HomeNavbar = ({
   setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   const [navbarShow, setNavbarShow] = useState(false);
+  const { isHeaderShow, setIsHeaderShow } = useHeaderStore();
   useEffect(() => {
     setNavbarShow(true);
   }, []);
@@ -44,7 +46,10 @@ const HomeNavbar = ({
           <div className="w-5/12 flex justify-end">
             <div
               className="cursor-pointer text-tertiary relative z-[30]"
-              onClick={() => setIsMenuOpen(true)}
+              onClick={() => {
+                setIsMenuOpen(true);
+                setIsHeaderShow(false);
+              }}
             >
               <BurgerMenu />
             </div>

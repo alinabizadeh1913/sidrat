@@ -1,4 +1,5 @@
 import Section from "@/components/layout/section";
+import { useHeaderStore } from "@/store";
 
 const MainMenu = ({
   isMenuOpen,
@@ -7,6 +8,8 @@ const MainMenu = ({
   isMenuOpen: boolean;
   setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
+  const { setIsHeaderShow } = useHeaderStore();
+
   return (
     <Section
       identifier="main-menu"
@@ -23,9 +26,12 @@ const MainMenu = ({
       >
         <button
           className="text-white text-8xl"
-          onClick={() => setIsMenuOpen(false)}
+          onClick={() => {
+            setIsMenuOpen(false);
+            setIsHeaderShow(true);
+          }}
         >
-          Click
+          Click Here
         </button>
       </div>
     </Section>

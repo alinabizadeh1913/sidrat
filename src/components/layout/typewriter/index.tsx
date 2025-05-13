@@ -79,10 +79,10 @@ const Typewriter = ({
   }, [children, speed, delay]);
 
   return (
-    <div className={`relative w-full transition-all duration-500 ease-in-out`}>
+    <div className={`relative w-full transition-all duration-500 ease-in-out select-none`}>
       <Typography
         tagName={tagName}
-        className={`whitespace-pre-wrap break-words ${className} ${
+        className={`whitespace-pre-wrap break-words select-none ${className} ${
           lang === "ar" || lang === "fa"
             ? `yekan-${weight}`
             : `biotif-${weight}`

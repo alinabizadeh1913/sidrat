@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import MainMenu from "./navbar/mainMenu";
 import { GradientText, MainText } from "@/components/layout/text";
 import headerData from "@/database/header.json";
-import { useStore, useLoadingStore } from "@/store";
+import { useStore, useLoadingStore, useHeaderStore } from "@/store";
 import Grid from "@/components/layout/grid";
 import Seasons from "../mainSection/seasons";
 import Image from "next/image";
@@ -20,7 +20,6 @@ const { settings } = settingsData;
 const { header } = headerData;
 
 const Header = () => {
-  const [headerShow, setHeaderShow] = useState<boolean>(false);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [scrollCount, setScrollCount] = useState<number>(0);
   const { language } = useStore();
@@ -29,6 +28,8 @@ const Header = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const { randomDuration } = useLoadingStore();
+
+  const { isHeaderShow, setIsHeaderShow } = useHeaderStore();
 
   useEffect(() => {
     let touchStartY: number | null = null;
@@ -72,10 +73,14 @@ const Header = () => {
       }
     };
 
-    window.addEventListener("wheel", handleWheel, { passive: true });
-    window.addEventListener("keydown", handleKeyDown);
-    window.addEventListener("touchstart", handleTouchStart, { passive: true });
-    window.addEventListener("touchmove", handleTouchMove, { passive: true });
+    if (isHeaderShow) {
+      window.addEventListener("wheel", handleWheel, { passive: true });
+      window.addEventListener("keydown", handleKeyDown);
+      window.addEventListener("touchstart", handleTouchStart, {
+        passive: true,
+      });
+      window.addEventListener("touchmove", handleTouchMove, { passive: true });
+    }
 
     return () => {
       window.removeEventListener("wheel", handleWheel);
@@ -83,7 +88,7 @@ const Header = () => {
       window.removeEventListener("touchstart", handleTouchStart);
       window.removeEventListener("touchmove", handleTouchMove);
     };
-  }, [scrollCount, isTransitioning]);
+  }, [scrollCount, isTransitioning, isHeaderShow]);
 
   const triggerTransition = (newCount: number) => {
     setIsTransitioning(true);
@@ -93,10 +98,6 @@ const Header = () => {
       setIsTransitioning(false);
     }, 700);
   };
-
-  useEffect(() => {
-    setHeaderShow(true);
-  }, []);
 
   return (
     <Section
@@ -137,7 +138,7 @@ const Header = () => {
                 <Typewriter
                   isFinished={isFinished}
                   setIsFinished={setIsFinished}
-                  speed={37}
+                  speed={30}
                   weight="regular"
                   lang={language}
                   delay={randomDuration + 1000}

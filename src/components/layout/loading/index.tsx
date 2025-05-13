@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import Section from "../section";
-import { useLoadingStore } from "@/store";
+import { useHeaderStore, useLoadingStore } from "@/store";
 
 const Loading = () => {
   const {
@@ -13,6 +13,8 @@ const Loading = () => {
     setRandomDuration,
     setIsLoadingShow,
   } = useLoadingStore();
+
+  const { setIsHeaderShow } = useHeaderStore();
 
   const STROKE_WIDTH = 6;
   const CIRCLE_RADIUS = 70 - STROKE_WIDTH / 2;
@@ -44,6 +46,7 @@ const Loading = () => {
 
   useEffect(() => {
     if (!isLoadingShow) {
+      setIsHeaderShow(true);
       setTimeout(() => {
         setRandomDuration(500);
       }, 500);
@@ -90,7 +93,9 @@ const Loading = () => {
         <div className="absolute inset-0 flex flex-col items-center justify-center select-none">
           <div className="text-[34px] biotif-bold text-tertiary">
             {progress}
-            <span className="text-[34px] biotif-bold me-1 text-tertiary">%</span>
+            <span className="text-[34px] biotif-bold me-1 text-tertiary">
+              %
+            </span>
           </div>
         </div>
       </div>
