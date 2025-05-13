@@ -7,6 +7,7 @@ import DayOfJudgment from "../day_of_judgment";
 import EternalFall from "../eternal_fall";
 import EndlessSerenity from "../endless_serenity";
 import Section from "@/components/layout/section";
+import MysticAura from "@/components/layout/aura";
 
 const Seasons = ({
   scrollCount,
@@ -27,6 +28,7 @@ const Seasons = ({
             : ""
         } absolute bottom-0 left-0 right-0 w-full h-full z-[40] bg-body`}
       >
+        <MysticAura />
         <Grid zIndex={45} />
 
         <StoryOfSoil

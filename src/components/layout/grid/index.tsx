@@ -8,7 +8,7 @@ interface Point {
 }
 
 const GRID_SPACING = 120; // فاصله خطوط
-const RADIUS = 130; // شعاع تاثیر موس
+const RADIUS = 150; // شعاع تاثیر موس
 const BASE_OPACITY = 0.008;
 const ACTIVE_OPACITY = 0.213;
 const TRANSITION_TIME = 313; // ms
@@ -83,7 +83,7 @@ const Grid = ({ zIndex }: { zIndex: number }) => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 transition-opacity duration-[100ms]"
+      className="hidden md:block fixed inset-0 transition-opacity duration-[100ms]"
       style={{
         zIndex: zIndex,
       }}

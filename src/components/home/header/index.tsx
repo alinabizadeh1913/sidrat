@@ -13,6 +13,7 @@ import Seasons from "../mainSection/seasons";
 import Image from "next/image";
 import settingsData from "@/database/settings.json";
 import Typewriter from "@/components/layout/typewriter";
+import MysticAura from "@/components/layout/aura";
 
 const { settings } = settingsData;
 
@@ -102,6 +103,7 @@ const Header = () => {
       identifier="header"
       className="flex flex-col h-screen md:px-[40px] lg:px-[64px] overflow-hidden relative z-20"
     >
+      <MysticAura />
       <HomeNavbar setIsMenuOpen={setIsMenuOpen} />
       <Grid zIndex={25} />
       <MainMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
@@ -135,7 +137,7 @@ const Header = () => {
                 <Typewriter
                   isFinished={isFinished}
                   setIsFinished={setIsFinished}
-                  speed={40}
+                  speed={37}
                   weight="regular"
                   lang={language}
                   delay={randomDuration + 1000}
