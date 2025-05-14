@@ -60,7 +60,7 @@
 }
 
 .border-primary {
-  border: 1px solid rgba(255, 243, 226, 0.25);
+  border: 1px solid rgba(255, 243, 226, 0.2509803922);
 }
 
 .border-secondary {
@@ -68,7 +68,7 @@
 }
 
 .border-primary-2 {
-  border: 2px solid rgba(255, 243, 226, 0.25);
+  border: 2px solid rgba(255, 243, 226, 0.2509803922);
 }
 
 .border-secondary-2 {
@@ -320,10 +320,11 @@ body {
   direction: ltr;
 }
 
-#header {
-  background: linear-gradient(135deg, #181a1a, #151616);
+@media screen and (min-width: 900px) {
+  #header {
+    background: linear-gradient(135deg, #181a1a, #151616);
+  }
 }
-
 .gradient-text-wrapper {
   position: relative;
   display: inline-block;

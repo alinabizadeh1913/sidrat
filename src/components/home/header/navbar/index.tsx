@@ -29,7 +29,7 @@ const HomeNavbar = ({
     >
       <Section special>
         <div className="w-full flex items-center justify-between pt-9 relative">
-          <div className="w-5/12 flex items-center gap-x-[24px]">
+          <div className="w-5/12 flex items-center gap-x-[16px] md:gap-x-[24px]">
             <ChangeLanguage />
             <SearchBox />
           </div>

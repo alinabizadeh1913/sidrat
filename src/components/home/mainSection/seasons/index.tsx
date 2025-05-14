@@ -26,7 +26,7 @@ const Seasons = ({
             : scrollCount < 1
             ? "invisible opacity-0"
             : ""
-        } absolute bottom-0 left-0 right-0 w-full h-full z-[40] bg-body`}
+        } absolute bottom-0 left-0 right-0 w-full h-full z-[40] bg-body hidden md:block`}
       >
         <MysticAura />
         <Grid zIndex={45} />

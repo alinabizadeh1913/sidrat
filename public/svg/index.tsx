@@ -1,15 +1,28 @@
 export const BurgerMenu = () => {
   return (
     <svg
-      width="24"
-      height="19"
       viewBox="0 0 24 19"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className="w-[22px] h-[18px] md:w-[24px] md:h-[20px]"
     >
-      <rect width="24" height="3" rx="1.5" fill="currentColor" />
-      <rect y="8" width="24" height="3" rx="1.5" fill="currentColor" />
-      <rect y="16" width="24" height="3" rx="1.5" fill="currentColor" />
+      <rect
+        rx="1.5"
+        fill="currentColor"
+        className="w-full h-[2px] md:h-[3px]"
+      />
+      <rect
+        y="8"
+        rx="1.5"
+        fill="currentColor"
+        className="w-full h-[2px] md:h-[3px]"
+      />
+      <rect
+        y="16"
+        rx="1.5"
+        fill="currentColor"
+        className="w-full h-[2px] md:h-[3px]"
+      />
     </svg>
   );
 };
@@ -17,11 +30,10 @@ export const BurgerMenu = () => {
 export const Globe = () => {
   return (
     <svg
-      width="20"
-      height="20"
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className="w-[26px] h-[26px] md:w-[20px] md:h-[20px]"
     >
       <path
         d="M10.0003 18.3333C14.6027 18.3333 18.3337 14.6024 18.3337 10C18.3337 5.39763 14.6027 1.66667 10.0003 1.66667C5.39795 1.66667 1.66699 5.39763 1.66699 10C1.66699 14.6024 5.39795 18.3333 10.0003 18.3333Z"
@@ -48,11 +60,10 @@ export const Globe = () => {
 export const Search = ({ direction }: { direction: "ltr" | "rtl" }) => {
   return (
     <svg
-      width="18"
-      height="18"
       viewBox="0 0 14 14"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className="w-[23px] h-[23px] md:w-[18px] md:h-[18px]"
       style={{
         transform: direction == "ltr" ? "scaleX(1)" : "scaleX(-1)",
       }}
@@ -101,11 +112,10 @@ export const Down = () => {
 export const Arrow = ({ direction }: { direction: "ltr" | "rtl" }) => {
   return (
     <svg
-      width="20"
-      height="17"
       viewBox="0 0 20 17"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className="w-[18px] h-[15px] lg:w-[20px] lg:h-[17px]"
       style={{
         direction: "ltr",
         transform: direction == "ltr" ? "scaleX(-1)" : "scaleX(1)",

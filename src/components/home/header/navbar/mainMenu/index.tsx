@@ -1,5 +1,8 @@
+"use client";
+
 import Section from "@/components/layout/section";
 import { useHeaderStore } from "@/store";
+import { useEffect, useState } from "react";
 
 const MainMenu = ({
   isMenuOpen,
@@ -9,6 +12,11 @@ const MainMenu = ({
   setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   const { setIsHeaderShow } = useHeaderStore();
+  const [screenWidth, setScreenWidth] = useState<number>();
+
+  useEffect(() => {
+    setScreenWidth(window.innerWidth);
+  }, [window.innerWidth]);
 
   return (
     <Section
@@ -31,7 +39,7 @@ const MainMenu = ({
             setIsHeaderShow(true);
           }}
         >
-          Click Here
+          Screen Width : {screenWidth}
         </button>
       </div>
     </Section>

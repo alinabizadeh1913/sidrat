@@ -102,7 +102,7 @@ const Header = () => {
   return (
     <Section
       identifier="header"
-      className="flex flex-col h-screen md:px-[40px] lg:px-[64px] overflow-hidden relative z-20"
+      className="flex flex-col md:h-screen px-[24px] sm:px-[32px] md:px-[48px] lg:px-[64px] md:overflow-hidden relative z-20"
     >
       <MysticAura />
       <HomeNavbar setIsMenuOpen={setIsMenuOpen} />
@@ -110,21 +110,23 @@ const Header = () => {
       <MainMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <Seasons scrollCount={scrollCount} setScrollCount={setScrollCount} />
 
-      <div className="w-full h-full flex py-[36px]">
-        <div className={`max-w-[1200px] h-[470px] w-full m-auto`}>
+      <div className="w-full h-full flex pt-[80px] sm:pt-[100px] md:py-[36px]">
+        <div className={`max-w-[1200px] w-full md:m-auto`}>
           {/* <div
             className={`glow-bofrder duration-500 delay-700 ease-out h-full`}
           ></div> */}
           <section
-            className={`w-full h-full px-[48px] md:px-[56px] lg:px-[64px] rounded-[25px] flex items-center`}
+            className={`w-full h-full md:px-[56px] lg:px-[64px] rounded-[25px] flex items-center`}
           >
             <section className="w-full">
-              <section className="flex justify-center">
+              <section className="flex md:justify-center">
                 <GradientText
                   weight="bold"
                   lang={language}
                   className={`${
-                    language == "en" ? "text-[40px]" : "text-[40px]"
+                    language == "en"
+                      ? "text-[28px] sm:text-[32px] md:text-[40px]"
+                      : "text-[24px] sm:text-[28px] md:text-[40px]"
                   }`}
                 >
                   {language == "ar"
@@ -134,7 +136,24 @@ const Header = () => {
                     : header.title.translations.en}
                 </GradientText>
               </section>
-              <div>
+              <div className="block md:hidden">
+                <MainText
+                  weight="regular"
+                  lang={language}
+                  className={`text-tertiary ${
+                    language == "en"
+                      ? "my-4 text-[18px] sm:text-[20px] leading-[32px] sm:leading-[36px]"
+                      : "my-4 text-[16px] sm:text-[18px] leading-[32px] sm:leading-[36px]"
+                  }`}
+                >
+                  {language == "ar"
+                    ? header.text.translations.ar
+                    : language == "fa"
+                    ? header.text.translations.fa
+                    : header.text.translations.en}
+                </MainText>
+              </div>
+              <div className="hidden md:block">
                 <Typewriter
                   isFinished={isFinished}
                   setIsFinished={setIsFinished}
@@ -161,7 +180,7 @@ const Header = () => {
                     isFinished
                       ? "visible opacity-100 duration-200"
                       : "invisible opacity-0"
-                  } ease-in`}
+                  } ease-in hidden md:block`}
                 >
                   <Down />
                 </div>

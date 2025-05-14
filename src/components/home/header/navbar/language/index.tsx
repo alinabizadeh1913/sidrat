@@ -32,19 +32,19 @@ const ChangeLanguage = () => {
   return (
     <>
       <div
-        className={`change-language w-[89px] ${
-          language == "en" ? "h-[38px]" : "h-[40px]"
-        } rounded-[10px] border-primary relative z-[30]`}
+        className={`change-language md:w-[89px] ${
+          language == "en" ? "md:h-[38px]" : "md:h-[40px]"
+        } rounded-[10px] md:border md:border-[#fff3e240] relative z-[30]`}
         ref={languageRef}
       >
         <div
           className={`${
             language == "en" ? "direction-ltr" : "direction-rtl"
-          } w-full h-full cursor-pointer flex items-center justify-center gap-x-2 text-tertiary`}
+          } md:w-full md:h-full cursor-pointer flex items-center justify-center gap-x-2 text-tertiary`}
           onClick={() => setIsLanguageOpen(!isLanguageOpen)}
         >
           <MainText
-            className="text-[14px] text-tertiary"
+            className="hidden md:block text-[14px] text-tertiary"
             lang={language}
             weight="regular"
           >
@@ -57,7 +57,7 @@ const ChangeLanguage = () => {
             isLanguageOpen
               ? "translate-y-0 visible opacity-100"
               : "translate-y-[20px] invisible opacity-0"
-          } absolute top-[130%] left-0 right-0 w-full border-primary rounded-[10px] pt-[6px] pb-2 flex flex-col gap-y-[6px] bg-[#ffffff09] backdrop-blur-[10px] duration-300`}
+          } absolute top-[130%] sm:top-[140%] md:top-[130%] left-0 right-0 w-[80px] md:w-full border-primary rounded-[10px] pt-[6px] pb-2 flex flex-col gap-y-[6px] bg-[#ffffff09] backdrop-blur-[10px] duration-300`}
         >
           <div
             className="ar-language cursor-pointer"

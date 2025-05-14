@@ -16,7 +16,7 @@ const Loading = () => {
 
   const { setIsHeaderShow } = useHeaderStore();
 
-  const STROKE_WIDTH = 6;
+  const STROKE_WIDTH = 4;
   const CIRCLE_RADIUS = 70 - STROKE_WIDTH / 2;
   const CIRCLE_CIRCUMFERENCE = 2 * Math.PI * CIRCLE_RADIUS;
   const STEP_TIME = 50;
@@ -65,13 +65,13 @@ const Loading = () => {
       <div className="relative w-[180px] h-[180px] text-center">
         <svg
           viewBox="0 0 140 140"
-          className="w-full h-full rotate-[-90deg] text-tertiary"
+          className="w-full h-full rotate-[-90deg] text-secondary"
         >
           <circle
             cx="70"
             cy="70"
             r={CIRCLE_RADIUS}
-            stroke="#151616"
+            stroke="#232525"
             strokeWidth={STROKE_WIDTH}
             fill="none"
           />
@@ -91,9 +91,9 @@ const Loading = () => {
           />
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center select-none">
-          <div className="text-[34px] biotif-bold text-tertiary">
+          <div className="text-[32px] biotif-regular text-secondary">
             {progress}
-            <span className="text-[34px] biotif-bold me-1 text-tertiary">
+            <span className="text-[32px] biotif-regular me-1 text-secondary">
               %
             </span>
           </div>

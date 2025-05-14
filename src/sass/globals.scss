@@ -22,7 +22,7 @@ $line-bg: linear-gradient(to bottom, #f8c279, #ac8654, #151616);
 $bg-overlay-1: linear-gradient(to bottom, #15161600, #15161600, #151616);
 $button-hover: rgba(240, 197, 139, 0.05);
 
-$border-primary: rgba(255, 243, 226, 0.25);
+$border-primary: #fff3e240;
 $border-secondary: #fdc882;
 
 // Utilities
@@ -394,11 +394,10 @@ body {
 
 // Header
 
-#header {
-  // background-image: url("../../public/uploads/pictures/Background.png");
-  // background-size: cover;
-  // background-position: 0 0;
-  background: linear-gradient(135deg,#181a1a,#151616);
+@media screen and (min-width: 900px) {
+  #header {
+    background: linear-gradient(135deg, #181a1a, #151616);
+  }
 }
 
 .gradient-text-wrapper {
@@ -560,4 +559,3 @@ body {
   pointer-events: auto;
   z-index: 1;
 }
-

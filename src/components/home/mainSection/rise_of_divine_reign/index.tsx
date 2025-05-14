@@ -39,8 +39,8 @@ const RiseOfDivineReign = ({
       }`}
     >
       <div className="absolute top-0 left-0 right-0 bottom-0 w-full h-full flex">
-        <div className="max-w-[1180px] w-full m-auto relative flex justify-center">
-          <div className="absolute top-0 bottom-0 w-[110%] h-full flex items-center justify-end">
+        <div className="max-w-[1180px] w-full m-auto relative flex justify-center md:px-[56px] lg:px-[64px] xl:px-[24px] 2xl:px-0">
+          <div className="absolute top-0 bottom-0 w-[100%] xl:w-[110%] h-full flex items-center justify-end md:px-[20px] lg:px-[24px] xl:px-[36px] 2xl:px-0">
             <div className="flex flex-col gap-y-[10px] relative z-[50]">
               {Array(7)
                 .fill(0)
@@ -87,7 +87,7 @@ const RiseOfDivineReign = ({
                   transition: "all 0.5313s 0.8s ease",
                 }}
               ></div>
-              <div className="content-inner ms-[39px] relative">
+              <div className="content-inner md:ms-[35px] lg:ms-[39px] relative">
                 <MainSectionTitle active={active} lang={language}>
                   {language == "ar"
                     ? seasons[2].title.translations.ar
@@ -97,7 +97,9 @@ const RiseOfDivineReign = ({
                 </MainSectionTitle>
                 <div
                   className={`${
-                    language == "en" ? "w-[480px]" : "w-[400px]"
+                    language == "en"
+                      ? "md:w-[360px] lg:w-[440px] xl:w-[480px]"
+                      : "md:w-[360px] lg:w-[400px]"
                   } description mt-1`}
                 >
                   <MainSectionDescription lang={language}>
@@ -118,14 +120,14 @@ const RiseOfDivineReign = ({
                 scrollCount == 3
                   ? "opacity-100 visible scale-100"
                   : "opacity-0 invisible scale-75"
-              } images relative z-[50] overflow-hidden w-[440px] h-[560px]`}
+              } images relative z-[50] overflow-hidden md:w-[360px] md:h-[480px] lg:w-[400px] lg:h-[520px] xl:w-[440px] xl:h-[560px]`}
               style={{
                 transition: "all 0.5313s 0.55s ease",
               }}
             >
               <ImageFadeSlider
-                imageUrls={seasons[2].imageUrls}
                 isActive={active}
+                imageUrls={seasons[2].imageUrls}
                 alt="rise-of-divine-reign"
               />
             </figure>
