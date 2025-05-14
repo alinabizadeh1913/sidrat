@@ -12,11 +12,11 @@ const MainMenu = ({
   setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   const { setIsHeaderShow } = useHeaderStore();
-  const [screenWidth, setScreenWidth] = useState<number>();
+  // const [screenWidth, setScreenWidth] = useState<number>();
 
-  useEffect(() => {
-    setScreenWidth(window.innerWidth);
-  }, [window.innerWidth]);
+  // useEffect(() => {
+  //   setScreenWidth(window.innerWidth);
+  // }, [window.innerWidth]);
 
   return (
     <Section
@@ -39,7 +39,8 @@ const MainMenu = ({
             setIsHeaderShow(true);
           }}
         >
-          Screen Width : {screenWidth}
+          Click Here
+          {/* Screen Width : {screenWidth} */}
         </button>
       </div>
     </Section>
