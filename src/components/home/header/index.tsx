@@ -134,7 +134,7 @@ const Header = () => {
       <section className="hidden md:block">
         <MysticAura zIndex={35} />
       </section>
-      <section className="hidden md:block pb-9 md:pb-0 px-[24px] sm:px-[32px] md:px-[48px] lg:px-[64px] z-[100]">
+      <section className="hidden md:block pb-9 md:pb-0 px-[24px] sm:px-[32px] md:px-[48px] lg:px-[64px]">
         <HomeNavbar setIsMenuOpen={setIsMenuOpen} />
       </section>
       <Grid zIndex={25} />

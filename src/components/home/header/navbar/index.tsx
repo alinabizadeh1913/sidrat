@@ -34,7 +34,7 @@ const HomeNavbar = ({
             <SearchBox />
           </div>
           <div className="w-2/12 flex justify-center">
-            <div className="w-[48px] h-[56px] relative">
+            <div className="w-[48px] h-[56px] relative z-[30]">
               <Image
                 src={`${process.env.NEXT_PUBLIC_UPLOADS_BASE_URL}${settings.logoUrl}`}
                 alt="sidrat-almuntaha-logo"
@@ -45,7 +45,7 @@ const HomeNavbar = ({
           </div>
           <div className="w-5/12 flex justify-end">
             <div
-              className="cursor-pointer text-tertiary relative z-[200]"
+              className="cursor-pointer text-tertiary relative z-[30]"
               onClick={() => {
                 setIsMenuOpen(true);
                 setIsHeaderShow(false);
