@@ -3,6 +3,7 @@
     {
       "id": 1,
       "href": "story-of-soil",
+      "slug": "story-of-soil",
       "title": {
         "translations": {
           "ar": "قصة التراب",
@@ -25,6 +26,7 @@
     {
       "id": 2,
       "href": "fourteen-infallibles",
+      "slug": "fourteen-infallibles",
       "title": {
         "translations": {
           "ar": "المعصومون الأربعة عشر",
@@ -47,6 +49,7 @@
     {
       "id": 3,
       "href": "rise-of-divine-reign",
+      "slug": "rise-of-divine-reign",
       "title": {
         "translations": {
           "ar": "قيام الدولة الكريمة",
@@ -69,6 +72,7 @@
     {
       "id": 4,
       "href": "suspended-house",
+      "slug": "suspended-house",
       "title": {
         "translations": {
           "ar": "البيت المعلّق",
@@ -91,6 +95,7 @@
     {
       "id": 5,
       "href": "day-of-judgment",
+      "slug": "day-of-judgment",
       "title": {
         "translations": {
           "ar": "يوم القيامة",
@@ -115,6 +120,7 @@
     {
       "id": 6,
       "href": "eternal-fall",
+      "slug": "eternal-fall",
       "title": {
         "translations": {
           "ar": "السقوط الأبدي",
@@ -138,6 +144,7 @@
     {
       "id": 7,
       "href": "endless_serenity",
+      "slug": "endless_serenity",
       "title": {
         "translations": {
           "ar": "السلام الخالد",

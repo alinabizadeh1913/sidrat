@@ -8,9 +8,10 @@ import { AuraSettings } from "@/types/auraConfig";
 
 type MysticAuraProps = {
   config?: Partial<AuraSettings>;
+  zIndex?: number;
 };
 
-const MysticAura = ({ config = {} }: MysticAuraProps) => {
+const MysticAura = ({ config = {}, zIndex }: MysticAuraProps) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
@@ -27,7 +28,8 @@ const MysticAura = ({ config = {} }: MysticAuraProps) => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 z-[-1] w-full h-full pointer-events-none"
+      className={`fixed top-0 right-0 left-0 bottom-0 w-full h-full pointer-events-none`}
+      style={{ zIndex: zIndex ?? 80 }}
     />
   );
 };

@@ -24,12 +24,39 @@ const Header = () => {
   const [scrollCount, setScrollCount] = useState<number>(0);
   const { language } = useStore();
   const [isFinished, setIsFinished] = useState<boolean>(false);
-
+  const [isLargeScreen, setIsLargeScreen] = useState<boolean | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const { randomDuration } = useLoadingStore();
 
   const { isHeaderShow, setIsHeaderShow } = useHeaderStore();
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const checkScreenSize = () => {
+      const isLarge = window.innerWidth > 900;
+      setIsLargeScreen(isLarge);
+    };
+
+    checkScreenSize(); // check initially
+
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => {
+      window.removeEventListener("resize", checkScreenSize);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isLargeScreen === null) return;
+
+    if (isLargeScreen) {
+      setIsHeaderShow(true);
+    } else {
+      setIsHeaderShow(false);
+    }
+  }, [isLargeScreen]);
 
   useEffect(() => {
     let touchStartY: number | null = null;
@@ -102,21 +129,27 @@ const Header = () => {
   return (
     <Section
       identifier="header"
-      className="flex flex-col md:h-screen px-[24px] sm:px-[32px] md:px-[48px] lg:px-[64px] md:overflow-hidden relative z-20"
+      className="flex flex-col md:h-screen md:overflow-hidden relative z-20"
     >
-      <MysticAura />
-      <HomeNavbar setIsMenuOpen={setIsMenuOpen} />
+      <section className="hidden md:block">
+        <MysticAura zIndex={35} />
+      </section>
+      <section className="hidden md:block pb-9 md:pb-0 px-[24px] sm:px-[32px] md:px-[48px] lg:px-[64px] z-[100]">
+        <HomeNavbar setIsMenuOpen={setIsMenuOpen} />
+      </section>
       <Grid zIndex={25} />
       <MainMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <Seasons scrollCount={scrollCount} setScrollCount={setScrollCount} />
 
-      <div className="w-full h-full flex pt-[80px] sm:pt-[100px] md:py-[36px]">
-        <div className={`max-w-[1200px] w-full md:m-auto`}>
+      <div className="w-full h-full flex pt-[60px] sm:pt-[80px] md:py-[36px]">
+        <div
+          className={`max-w-[1200px] w-full md:m-auto px-[24px] sm:px-[32px] md:px-[48px] lg:px-[64px]`}
+        >
           {/* <div
             className={`glow-bofrder duration-500 delay-700 ease-out h-full`}
           ></div> */}
           <section
-            className={`w-full h-full md:px-[56px] lg:px-[64px] rounded-[25px] flex items-center`}
+            className={`w-full h-full sm:px-[48px] md:px-[16px] rounded-[25px] flex items-center`}
           >
             <section className="w-full">
               <section className="flex md:justify-center">
@@ -125,7 +158,7 @@ const Header = () => {
                   lang={language}
                   className={`${
                     language == "en"
-                      ? "text-[28px] sm:text-[32px] md:text-[40px]"
+                      ? "text-[24px] sm:text-[32px] md:text-[40px]"
                       : "text-[24px] sm:text-[28px] md:text-[40px]"
                   }`}
                 >

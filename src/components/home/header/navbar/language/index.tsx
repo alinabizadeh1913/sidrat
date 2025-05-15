@@ -57,7 +57,7 @@ const ChangeLanguage = () => {
             isLanguageOpen
               ? "translate-y-0 visible opacity-100"
               : "translate-y-[20px] invisible opacity-0"
-          } absolute top-[130%] sm:top-[140%] md:top-[130%] left-0 right-0 w-[80px] md:w-full border-primary rounded-[10px] pt-[6px] pb-2 flex flex-col gap-y-[6px] bg-[#ffffff09] backdrop-blur-[10px] duration-300`}
+          } absolute top-[155%] md:top-[130%] left-0 right-0 w-[89px] md:w-full border-primary rounded-[10px] pt-[6px] pb-2 flex flex-col gap-y-[6px] bg-[#151616] md:bg-[#ffffff09] backdrop-blur-[10px] duration-300`}
         >
           <div
             className="ar-language cursor-pointer"

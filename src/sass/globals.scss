@@ -81,8 +81,13 @@ $border-secondary: #fdc882;
 .button-hover:hover {
   background-color: $button-hover;
   box-shadow: 0 4px 6px rgba(248, 194, 121, 0.15);
-  .icon-wrapper {
-    margin-inline-start: 24px;
+}
+
+@media screen and (min-width: 900px) {
+  .button-hover:hover {
+    .icon-wrapper {
+      margin-inline-start: 24px;
+    }
   }
 }
 
@@ -263,6 +268,10 @@ h6 {
 
 // Space Of Section
 
+.space-exteralarge {
+  margin-top: 120px;
+}
+
 .space-large {
   margin-top: 80px;
 }
@@ -280,6 +289,9 @@ h6 {
 }
 
 @media (min-width: 600px) {
+  .space-exteralarge {
+    margin-top: 160px;
+  }
   .space-large {
     margin-top: 100px;
   }
@@ -298,6 +310,9 @@ h6 {
 }
 
 @media (min-width: 900px) {
+  .space-exteralarge {
+    margin-top: 200px;
+  }
   .space-large {
     margin-top: 120px;
   }

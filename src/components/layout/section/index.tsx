@@ -1,6 +1,6 @@
 interface SectionType {
   container?: boolean;
-  space?: "exterasmall" | "small" | "medium" | "large";
+  space?: "exterasmall" | "small" | "medium" | "large" | "extralarge";
   children?: React.ReactNode;
   className?: string;
   identifier?: string;
@@ -28,6 +28,8 @@ const Section = ({
             ? "space-medium"
             : space === "large"
             ? "space-large"
+            : space == "extralarge"
+            ? "space-exteralarge"
             : ""
         } ${className} ${special ? "special-container" : ""}`}
       >

@@ -55,10 +55,12 @@
   background-color: rgba(240, 197, 139, 0.05);
   box-shadow: 0 4px 6px rgba(248, 194, 121, 0.15);
 }
-.button-hover:hover .icon-wrapper {
-  margin-inline-start: 24px;
-}
 
+@media screen and (min-width: 900px) {
+  .button-hover:hover .icon-wrapper {
+    margin-inline-start: 24px;
+  }
+}
 .border-primary {
   border: 1px solid rgba(255, 243, 226, 0.2509803922);
 }
@@ -209,6 +211,10 @@ h6 {
     font-size: 0.95rem;
   }
 }
+.space-exteralarge {
+  margin-top: 120px;
+}
+
 .space-large {
   margin-top: 80px;
 }
@@ -226,6 +232,9 @@ h6 {
 }
 
 @media (min-width: 600px) {
+  .space-exteralarge {
+    margin-top: 160px;
+  }
   .space-large {
     margin-top: 100px;
   }
@@ -240,6 +249,9 @@ h6 {
   }
 }
 @media (min-width: 900px) {
+  .space-exteralarge {
+    margin-top: 200px;
+  }
   .space-large {
     margin-top: 120px;
   }

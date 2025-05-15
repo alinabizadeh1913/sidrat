@@ -45,7 +45,7 @@ const HomeNavbar = ({
           </div>
           <div className="w-5/12 flex justify-end">
             <div
-              className="cursor-pointer text-tertiary relative z-[30]"
+              className="cursor-pointer text-tertiary relative z-[200]"
               onClick={() => {
                 setIsMenuOpen(true);
                 setIsHeaderShow(false);

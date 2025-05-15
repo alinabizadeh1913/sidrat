@@ -60,7 +60,7 @@ const Loading = () => {
         isLoadingShow
           ? "visible opacity-100"
           : "invisible opacity-0 delay-[650ms]"
-      } w-full h-screen fixed z-[100] top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-[#151616] duration-300`}
+      } w-full h-screen fixed z-[1000] top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-[#151616] duration-300`}
     >
       <div className="relative w-[180px] h-[180px] text-center">
         <svg

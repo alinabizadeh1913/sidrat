@@ -7,13 +7,15 @@ const MainSectionTitle = ({
 }: {
   children: React.ReactNode;
   lang: "ar" | "fa" | "en";
-  active: boolean;
+  active?: boolean;
 }) => {
   return (
     <section className="gradient-text-wrapper select-none">
       <div
         className={`gradient-text md:text-[32px] lg:text-[36px] xl:text-[40px] text-center ${
-          lang == "fa" || lang == "ar" ? "yekan-black" : "biotif-bold"
+          lang == "fa" || lang == "ar"
+            ? "yekan-black text-[24px] sm:text-[28px]"
+            : "biotif-bold text-[24px] sm:text-[32px]"
         }`}
       >
         {children}
@@ -23,9 +25,9 @@ const MainSectionTitle = ({
           lang == "fa" || lang == "ar" ? "yekan-black" : "biotif-bold"
         } ${
           active && lang == "en"
-            ? "gradient-text-overlay-ltr"
+            ? "gradient-text-overlay-ltr text-[24px] sm:text-[32px]"
             : active && (lang == "fa" || lang == "ar")
-            ? "gradient-text-overlay-rtl"
+            ? "gradient-text-overlay-rtl text-[24px] sm:text-[28px]"
             : ""
         }`}
       >
@@ -45,7 +47,9 @@ const MainSectionDescription = ({
   return (
     <Typography
       className={`text-secondary md:text-[20px] lg:text-[22px] xl:text-[24px] md:leading-[36px] xl:leading-[40px] select-none ${
-        lang == "fa" || lang == "ar" ? "yekan-regular" : "biotif-regular"
+        lang == "fa" || lang == "ar"
+          ? "yekan-regular text-[17px] sm:text-[19px] leading-[32px] sm:leading-[36px]"
+          : "biotif-regular text-[19px] sm:text-[21px] leading-[32px] sm:leading-[36px]"
       }`}
     >
       {children}

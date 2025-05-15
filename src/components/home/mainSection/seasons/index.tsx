@@ -28,7 +28,7 @@ const Seasons = ({
             : ""
         } absolute bottom-0 left-0 right-0 w-full h-full z-[40] bg-body hidden md:block`}
       >
-        <MysticAura />
+        <MysticAura zIndex={65} />
         <Grid zIndex={45} />
 
         <StoryOfSoil

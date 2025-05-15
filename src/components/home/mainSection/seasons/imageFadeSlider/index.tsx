@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
 
 type Props = {
   imageUrls: string[];
-  isActive: boolean;
+  isActive?: boolean;
   alt?: string;
   delay?: number;
 };
