@@ -7,7 +7,7 @@ interface Point {
   y: number;
 }
 
-const GRID_SPACING = 120; // فاصله خطوط
+const GRID_SPACING = 110; // فاصله خطوط
 const RADIUS = 130; // شعاع تاثیر موس
 const BASE_OPACITY = 0.008;
 const ACTIVE_OPACITY = 0.213;

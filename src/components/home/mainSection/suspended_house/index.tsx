@@ -121,7 +121,7 @@ const SuspendedHouse = ({
                 scrollCount == 4
                   ? "opacity-100 visible scale-100"
                   : "opacity-0 invisible scale-75"
-              } images relative z-[50] overflow-hidden md:w-[360px] md:h-[480px] lg:w-[400px] lg:h-[520px] xl:w-[440px] xl:h-[560px]`}
+              } images relative z-[50] overflow-hidden md:w-[360px] md:h-[480px] lg:w-[400px] lg:h-[520px] xl:w-[420px] xl:h-[540px]`}
               style={{
                 transition: "all 0.5313s 0.55s ease",
               }}

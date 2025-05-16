@@ -14,8 +14,8 @@ const MainSectionTitle = ({
       <div
         className={`gradient-text md:text-[32px] lg:text-[36px] xl:text-[40px] text-center ${
           lang == "fa" || lang == "ar"
-            ? "yekan-black text-[24px] sm:text-[28px]"
-            : "biotif-bold text-[24px] sm:text-[32px]"
+            ? "yekan-black main-section-title-rtl"
+            : "biotif-bold main-section-title-ltr"
         }`}
       >
         {children}
@@ -25,9 +25,9 @@ const MainSectionTitle = ({
           lang == "fa" || lang == "ar" ? "yekan-black" : "biotif-bold"
         } ${
           active && lang == "en"
-            ? "gradient-text-overlay-ltr text-[24px] sm:text-[32px]"
+            ? "gradient-text-overlay-ltr main-section-title-ltr"
             : active && (lang == "fa" || lang == "ar")
-            ? "gradient-text-overlay-rtl text-[24px] sm:text-[28px]"
+            ? "gradient-text-overlay-rtl main-section-title-rtl"
             : ""
         }`}
       >
@@ -48,8 +48,8 @@ const MainSectionDescription = ({
     <Typography
       className={`text-secondary md:text-[20px] lg:text-[22px] xl:text-[24px] md:leading-[36px] xl:leading-[40px] select-none ${
         lang == "fa" || lang == "ar"
-          ? "yekan-regular text-[17px] sm:text-[19px] leading-[32px] sm:leading-[36px]"
-          : "biotif-regular text-[19px] sm:text-[21px] leading-[32px] sm:leading-[36px]"
+          ? "yekan-regular main-section-description-rtl leading-[32px] sm:leading-[36px]"
+          : "biotif-regular main-section-description-ltr leading-[32px] sm:leading-[36px]"
       }`}
     >
       {children}

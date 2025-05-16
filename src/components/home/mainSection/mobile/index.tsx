@@ -15,7 +15,7 @@ const SeasonsMobile = () => {
 
   return (
     <>
-      <Section className="block md:hidden px-[24px] sm:px-[80px]">
+      <Section identifier="home-mobile-seasons" className="block md:hidden">
         {seasons.map((season, index) => (
           <Section space="extralarge" className="w-full" key={index}>
             <div className="content relative">
@@ -35,7 +35,7 @@ const SeasonsMobile = () => {
                   transition: "all 0.5313s 0.8s ease",
                 }}
               ></div>
-              <div className="content-inner ms-[27px] sm:ms-[31px] md:ms-[35px] lg:ms-[39px] relative">
+              <div className="content-inner ms-[23px] sm:ms-[31px] md:ms-[35px] lg:ms-[39px] relative">
                 <MainSectionTitle active lang={language}>
                   {language == "ar"
                     ? season.title.translations.ar
@@ -48,7 +48,7 @@ const SeasonsMobile = () => {
                     language == "en"
                       ? "w-full md:w-[360px] lg:w-[440px] xl:w-[480px]"
                       : "w-full md:w-[360px] lg:w-[400px]"
-                  } description mt-4`}
+                  } description mt-4 sm:mt-2`}
                 >
                   <MainSectionDescription lang={language}>
                     {language == "ar"
@@ -60,9 +60,9 @@ const SeasonsMobile = () => {
                 </div>
               </div>
             </div>
-            <div className="flex justify-center my-12">
+            <div className="flex justify-center my-10 sm:my-12">
               <figure
-                className={`images relative z-[50] overflow-hidden w-full h-[480px] sm:h-[560px] max-1w-[280px] sm:max-1w-[320px] sm:w1-[320px]`}
+                className={`home-mobile-images relative z-[50] overflow-hidden w-full`}
                 style={{
                   transition: "all 0.5313s 0.55s ease",
                 }}
@@ -73,9 +73,11 @@ const SeasonsMobile = () => {
                 />
               </figure>
             </div>
-            <Link href={season.href}>
-              <Button lang={language} />
-            </Link>
+            <div>
+              <Link href={season.href}>
+                <Button lang={language} />
+              </Link>
+            </div>
           </Section>
         ))}
       </Section>

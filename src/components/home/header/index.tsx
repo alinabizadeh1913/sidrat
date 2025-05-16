@@ -10,12 +10,8 @@ import headerData from "@/database/header.json";
 import { useStore, useLoadingStore, useHeaderStore } from "@/store";
 import Grid from "@/components/layout/grid";
 import Seasons from "../mainSection/seasons";
-import Image from "next/image";
-import settingsData from "@/database/settings.json";
 import Typewriter from "@/components/layout/typewriter";
 import MysticAura from "@/components/layout/aura";
-
-const { settings } = settingsData;
 
 const { header } = headerData;
 
@@ -132,9 +128,9 @@ const Header = () => {
       className="flex flex-col md:h-screen md:overflow-hidden relative z-20"
     >
       <section className="hidden md:block">
-        <MysticAura zIndex={35} />
+        <MysticAura />
       </section>
-      <section className="hidden md:block pb-9 md:pb-0 px-[24px] sm:px-[32px] md:px-[48px] lg:px-[64px]">
+      <section className="hidden md:block pb-9 md:pb-0 px-[32px] sm:px-[40px] md:px-[48px] lg:px-[64px]">
         <HomeNavbar setIsMenuOpen={setIsMenuOpen} />
       </section>
       <Grid zIndex={25} />
@@ -143,13 +139,14 @@ const Header = () => {
 
       <div className="w-full h-full flex pt-[60px] sm:pt-[80px] md:py-[36px]">
         <div
-          className={`max-w-[1200px] w-full md:m-auto px-[24px] sm:px-[32px] md:px-[48px] lg:px-[64px]`}
+          id="header-wrapper"
+          className={`max-w-[1200px] w-full md:m-auto md:px-[48px] lg:px-[64px]`}
         >
           {/* <div
             className={`glow-bofrder duration-500 delay-700 ease-out h-full`}
           ></div> */}
           <section
-            className={`w-full h-full sm:px-[48px] md:px-[16px] rounded-[25px] flex items-center`}
+            className={`w-full h-full md:px-[16px] rounded-[25px] flex items-center`}
           >
             <section className="w-full">
               <section className="flex md:justify-center">
@@ -158,8 +155,8 @@ const Header = () => {
                   lang={language}
                   className={`${
                     language == "en"
-                      ? "text-[24px] sm:text-[32px] md:text-[40px]"
-                      : "text-[24px] sm:text-[28px] md:text-[40px]"
+                      ? "main-section-title-ltr md:text-[40px]"
+                      : "main-section-title-rtl md:text-[40px]"
                   }`}
                 >
                   {language == "ar"

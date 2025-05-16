@@ -3,13 +3,13 @@
 import { AuraSettings } from "@/types/auraConfig";
 
 const defaultConfig: AuraSettings = {
-  particleCount: 35,
+  particleCount: 30,
   particleColor: "rgba(255, 240, 200, 0.6)",
   minSpeed: 0.2,
-  maxSpeed: 0.8,
+  maxSpeed: 0.3,
   minSize: 1.2,
-  maxSize: 3.2,
-  glowIntensity: 12,
+  maxSize: 2.5,
+  glowIntensity: 15,
 };
 
 type Particle = {
@@ -26,8 +26,8 @@ function getResponsiveParticleCount(baseCount: number): number {
   if (width < 600) return 10;
   if (width < 900) return 15;
   if (width < 1024) return 20;
-  if (width < 1280) return 25;
-  if (width < 1536) return 30;
+  if (width < 1280) return 20;
+  if (width < 1536) return 25;
   return baseCount;
 }
 
