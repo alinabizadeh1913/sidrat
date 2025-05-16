@@ -1,8 +1,6 @@
-import useEmblaCarousel from "embla-carousel-react";
-import Fade from "embla-carousel-fade";
-import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
+import { Carousel } from "bootstrap";
 
 type Props = {
   imageUrls: string[];
@@ -16,55 +14,83 @@ const ImageFadeSlider = ({
   imageUrls,
   isActive,
   alt = "",
-  delay = 4500,
+  delay = 3500,
   className = "",
 }: Props) => {
-  const autoplay = useRef(
-    Autoplay({
-      delay,
-      playOnInit: false,
-      stopOnInteraction: false,
-      stopOnMouseEnter: false,
-    })
-  );
-
-  const [emblaRef, emblaApi] = useEmblaCarousel(
-    {
-      loop: true,
-      dragFree: false,
-    },
-    [Fade(), autoplay.current]
-  );
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const carouselInstance = useRef<Carousel | null>(null);
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
-    if (!emblaApi) return;
-    if (isActive) {
-      emblaApi.scrollTo(0); // شروع از اسلاید اول
-      autoplay.current.play();
-    } else {
-      autoplay.current.stop();
-    }
-  }, [isActive, emblaApi]);
+    if (!carouselRef.current) return;
+
+    // Initialize Bootstrap Carousel
+    carouselInstance.current = new Carousel(carouselRef.current, {
+      interval: delay,
+      wrap: true,
+      keyboard: false,
+      pause: false,
+      touch: false,
+    });
+
+    // Initialize Intersection Observer
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (!carouselInstance.current) return;
+
+        if (entry.isIntersecting) {
+          // When section is visible, start the carousel
+          carouselInstance.current.cycle();
+        } else {
+          // When section is not visible
+          carouselInstance.current.pause();
+          // Reset to first slide immediately
+          carouselInstance.current.to(0);
+        }
+      },
+      {
+        threshold: 0.5, // Trigger when 50% of the section is visible
+      }
+    );
+
+    // Start observing the carousel element
+    observerRef.current.observe(carouselRef.current);
+
+    return () => {
+      if (carouselInstance.current) {
+        carouselInstance.current.dispose();
+      }
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, [delay]);
 
   const baseUrl = process.env.NEXT_PUBLIC_UPLOADS_BASE_URL;
 
   return (
     <div
-      className={`embla relative overflow-hidden w-full h-full select-none ${className}`}
-      ref={emblaRef}
+      ref={carouselRef}
+      className={`carousel slide carousel-fade ${className}`}
+      data-bs-ride="carousel"
+      data-bs-interval={delay}
+      data-bs-pause="false"
+      data-bs-touch="false"
+      data-bs-keyboard="false"
     >
-      <div className="embla__container flex select-none overflow-hidden w-full h-full">
+      <div className="carousel-inner">
         {imageUrls.map((url, index) => (
           <div
-            className="embla__slide relative flex-[0_0_100%] w-full h-full select-none overflow-hidden"
             key={index}
+            className={`carousel-item ${index === 0 ? "active" : ""}`}
           >
-            <div className="absolute inset-0 bg-overlay-1 z-[1] select-none overflow-hidden" />
+            <div className="absolute inset-0 bg-overlay-1 z-[1]" />
             <Image
               src={`${baseUrl}${url}`}
               alt={alt}
               fill
-              className="object-cover select-none"
+              className="object-cover"
               priority
               objectFit="cover"
             />

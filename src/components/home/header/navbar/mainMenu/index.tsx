@@ -23,7 +23,7 @@ const MainMenu = ({
       identifier="main-menu"
       className={`${
         isMenuOpen ? "translate-y-0" : "translate-y-[-100%]"
-      } absolute top-0 left-0 right-0 w-full h-full z-[150] bg-body`}
+      } absolute top-0 left-0 right-0 w-full h-full z-[150] bg-body hidden md:block`}
     >
       <div
         className={`main-menu-inner w-full h-full flex items-center justify-center ${

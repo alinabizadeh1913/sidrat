@@ -1,5 +1,4 @@
 // Tailwind Css
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -488,7 +487,7 @@ body {
   align-items: center;
   opacity: 0;
   transition: opacity 0.3s ease;
-  
+
   &::before {
     content: "";
     position: absolute;
@@ -503,10 +502,10 @@ body {
     filter: blur(4px);
     transform-origin: center center;
   }
-  
+
   &.active {
     opacity: 1;
-    
+
     &::before {
       animation: rotateGlow 3s linear infinite;
     }
@@ -819,7 +818,7 @@ body {
   #header-wrapper {
     padding: 0 24px;
   }
-  
+
   .mobile-card {
     padding: 24px;
   }
@@ -830,7 +829,7 @@ body {
   #header-wrapper {
     padding: 0 calc(24px + (120 - 24) * ((100vw - 600px) / (900 - 600)));
   }
-  
+
   .mobile-card {
     padding: 32px;
   }
@@ -841,7 +840,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 16px;
+  border-radius: 5px;
   transition: transform 0.5s ease;
 }
 
@@ -855,31 +854,35 @@ body {
 .mobile-card {
   background: rgba(21, 22, 22, 0.95);
   backdrop-filter: blur(10px);
-  border-radius: 25px;
+  border: 1px solid $border-primary;
+  border-radius: 10px;
   padding: 32px;
   margin-bottom: 40px;
   position: relative;
   overflow: hidden;
-  
+  transition: all 0.3s ease;
+
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient(135deg, rgba(253, 200, 130, 0.1), transparent);
     opacity: 0;
     transition: opacity 0.3s ease;
   }
-  
-  &:hover {
+
+  &.active {
     &::before {
       opacity: 1;
     }
-    
+  }
+
+  &:hover {
     .mobile-image-container img {
       transform: scale(1.05);
     }
   }
-  
+
   .mobile-content {
     position: relative;
     z-index: 2;
@@ -887,26 +890,27 @@ body {
     flex-direction: column;
     gap: 32px;
   }
-  
+
   .mobile-image-container {
     position: relative;
     width: 100%;
-    border-radius: 16px;
+    border-radius: 5px;
     overflow: hidden;
     margin: 0;
-    
+
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.5s ease;
     }
-    
+
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, 
+      background: linear-gradient(
+        to bottom,
         rgba(21, 22, 22, 0) 0%,
         rgba(21, 22, 22, 0.2) 50%,
         rgba(21, 22, 22, 0.4) 100%
@@ -914,29 +918,29 @@ body {
       z-index: 1;
     }
   }
-  
+
   .mobile-button-container {
     display: flex;
     justify-content: center;
     margin-top: 16px;
   }
-  
+
   // Alternating layouts
   &:nth-child(odd) {
     .mobile-content {
       flex-direction: column;
     }
-    
+
     .mobile-image-container {
       height: 500px;
     }
   }
-  
+
   &:nth-child(even) {
     .mobile-content {
       flex-direction: column-reverse;
     }
-    
+
     .mobile-image-container {
       height: 600px;
     }
@@ -947,11 +951,11 @@ body {
 @media screen and (max-width: 450px) {
   .mobile-card {
     padding: 24px;
-    
+
     &:nth-child(odd) .mobile-image-container {
       height: 400px;
     }
-    
+
     &:nth-child(even) .mobile-image-container {
       height: 500px;
     }
@@ -963,7 +967,7 @@ body {
     &:nth-child(odd) .mobile-image-container {
       height: 450px;
     }
-    
+
     &:nth-child(even) .mobile-image-container {
       height: 550px;
     }
@@ -973,13 +977,69 @@ body {
 @media screen and (min-width: 600px) and (max-width: 900px) {
   .mobile-card {
     padding: 32px;
-    
+
     &:nth-child(odd) .mobile-image-container {
       height: 500px;
     }
-    
+
     &:nth-child(even) .mobile-image-container {
       height: 600px;
     }
   }
+}
+
+// Carousel Styles
+.carousel {
+  position: relative;
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.carousel-item.active {
+  position: relative;
+  display: block;
+}
+
+.carousel-fade .carousel-item {
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+  transform: none;
+}
+
+.carousel-fade .carousel-item.active {
+  opacity: 1;
+  transform: none;
+}
+
+.carousel-item-next:not(.carousel-item-start),
+.active.carousel-item-end {
+  transform: translateX(100%);
+}
+
+.carousel-item-prev:not(.carousel-item-end),
+.active.carousel-item-start {
+  transform: translateX(-100%);
+}
+
+.carousel-fade .carousel-item-next:not(.carousel-item-start),
+.carousel-fade .active.carousel-item-end {
+  transform: none;
+}
+
+.carousel-fade .carousel-item-prev:not(.carousel-item-end),
+.carousel-fade .active.carousel-item-start {
+  transform: none;
 }

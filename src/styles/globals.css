@@ -709,7 +709,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 16px;
+  border-radius: 5px;
   transition: transform 0.5s ease;
 }
 
@@ -721,11 +721,13 @@ body {
 .mobile-card {
   background: rgba(21, 22, 22, 0.95);
   backdrop-filter: blur(10px);
-  border-radius: 25px;
+  border: 1px solid rgba(255, 243, 226, 0.2509803922);
+  border-radius: 10px;
   padding: 32px;
   margin-bottom: 40px;
   position: relative;
   overflow: hidden;
+  transition: all 0.3s ease;
 }
 .mobile-card::before {
   content: "";
@@ -735,7 +737,7 @@ body {
   opacity: 0;
   transition: opacity 0.3s ease;
 }
-.mobile-card:hover::before {
+.mobile-card.active::before {
   opacity: 1;
 }
 .mobile-card:hover .mobile-image-container img {
@@ -751,7 +753,7 @@ body {
 .mobile-card .mobile-image-container {
   position: relative;
   width: 100%;
-  border-radius: 16px;
+  border-radius: 5px;
   overflow: hidden;
   margin: 0;
 }
@@ -815,4 +817,58 @@ body {
   .mobile-card:nth-child(even) .mobile-image-container {
     height: 600px;
   }
+}
+.carousel {
+  position: relative;
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.carousel-item.active {
+  position: relative;
+  display: block;
+}
+
+.carousel-fade .carousel-item {
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+  transform: none;
+}
+
+.carousel-fade .carousel-item.active {
+  opacity: 1;
+  transform: none;
+}
+
+.carousel-item-next:not(.carousel-item-start),
+.active.carousel-item-end {
+  transform: translateX(100%);
+}
+
+.carousel-item-prev:not(.carousel-item-end),
+.active.carousel-item-start {
+  transform: translateX(-100%);
+}
+
+.carousel-fade .carousel-item-next:not(.carousel-item-start),
+.carousel-fade .active.carousel-item-end {
+  transform: none;
+}
+
+.carousel-fade .carousel-item-prev:not(.carousel-item-end),
+.carousel-fade .active.carousel-item-start {
+  transform: none;
 }
