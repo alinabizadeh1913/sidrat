@@ -52,7 +52,7 @@ const SeasonsMobile = () => {
               </div>
               
               <div className="mobile-button-container">
-                <Link href={season.href} className="button-hover">
+                <Link href={season.href} className="button-hover block w-full">
                   <Button lang={language} />
                 </Link>
               </div>
