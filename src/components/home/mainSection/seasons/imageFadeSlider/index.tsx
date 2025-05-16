@@ -9,6 +9,7 @@ type Props = {
   isActive?: boolean;
   alt?: string;
   delay?: number;
+  className?: string;
 };
 
 const ImageFadeSlider = ({
@@ -16,6 +17,7 @@ const ImageFadeSlider = ({
   isActive,
   alt = "",
   delay = 4500,
+  className = "",
 }: Props) => {
   const autoplay = useRef(
     Autoplay({
@@ -48,7 +50,7 @@ const ImageFadeSlider = ({
 
   return (
     <div
-      className="embla relative overflow-hidden w-full h-full select-none"
+      className={`embla relative overflow-hidden w-full h-full select-none ${className}`}
       ref={emblaRef}
     >
       <div className="embla__container flex select-none overflow-hidden w-full h-full">
@@ -64,6 +66,7 @@ const ImageFadeSlider = ({
               fill
               className="object-cover select-none"
               priority
+              objectFit="cover"
             />
           </div>
         ))}

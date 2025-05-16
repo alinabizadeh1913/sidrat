@@ -4,10 +4,12 @@ const MainSectionTitle = ({
   children,
   lang,
   active,
+  className
 }: {
   children: React.ReactNode;
   lang: "ar" | "fa" | "en";
   active?: boolean;
+  className?: string;
 }) => {
   return (
     <section className="gradient-text-wrapper select-none">
