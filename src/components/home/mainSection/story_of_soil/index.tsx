@@ -7,6 +7,7 @@ import seasonsData from "@/database/seasons.json";
 import { useStore } from "@/store";
 import ImageFadeSlider from "../seasons/imageFadeSlider";
 import Link from "next/link";
+import Image from "next/image";
 
 const { seasons } = seasonsData;
 
@@ -41,33 +42,6 @@ const StoryOfSoil = ({
     >
       <div className="absolute top-0 left-0 right-0 bottom-0 w-full h-full flex">
         <div className="max-w-[1180px] w-full m-auto relative flex justify-center md:px-[56px] lg:px-[64px] xl:px-[24px] 2xl:px-0">
-          <div className="absolute top-0 bottom-0 w-[100%] xl:w-[110%] h-full flex items-center justify-end md:px-[20px] lg:px-[24px] xl:px-[36px] 2xl:px-0">
-            <div className="flex flex-col gap-y-[10px] relative z-[50]">
-              {Array(7)
-                .fill(0)
-                .map((_, index) => (
-                  <div
-                    onClick={() => {
-                      setScrollCount(index + 1);
-                    }}
-                    className={`${
-                      index == scrollCount - 1
-                        ? "border-secondary"
-                        : "border-primary"
-                    } w-[12px] h-[12px] circle cursor-pointer rounded-[2px] hover:border-[#fdc882] duration-300 flex justify-center items-center`}
-                    key={index}
-                  >
-                    <div
-                      className={`${
-                        index == scrollCount - 1
-                          ? "visible opacity-100"
-                          : "invisible opacity-0"
-                      } w-[6px] h-[6px] bg-[#fdc882] duration-300`}
-                    ></div>
-                  </div>
-                ))}
-            </div>
-          </div>
           <div className="w-full flex items-center justify-between">
             <div className="content relative">
               <div
@@ -126,11 +100,40 @@ const StoryOfSoil = ({
                 transition: "all 0.5313s 0.55s ease",
               }}
             >
-              <ImageFadeSlider
-                isActive={active}
-                imageUrls={seasons[0].imageUrls}
-                alt="story-of-soil"
+              <div className="absolute inset-0 bg-overlay-1 z-[1] hidden md:block" />
+              <Image
+                src={`${process.env.NEXT_PUBLIC_UPLOADS_BASE_URL}${seasons[0].imageUrls[0]}`}
+                alt={seasons[0].slug}
+                fill
+                objectFit="cover"
               />
+              <div className="absolute bottom-[0] w-[100%] py-[15px] flex justify-center">
+                <div className="flex gap-x-[10px] relative z-[50]">
+                  {Array(7)
+                    .fill(0)
+                    .map((_, index) => (
+                      <div
+                        onClick={() => {
+                          setScrollCount(index + 1);
+                        }}
+                        className={`${
+                          index == scrollCount - 1
+                            ? "border-secondary"
+                            : "border-primary"
+                        } w-[12px] h-[12px] circle cursor-pointer rounded-[2px] hover:border-[#fdc882] duration-300 flex justify-center items-center`}
+                        key={index}
+                      >
+                        <div
+                          className={`${
+                            index == scrollCount - 1
+                              ? "visible opacity-100"
+                              : "invisible opacity-0"
+                          } w-[6px] h-[6px] bg-[#fdc882] duration-300`}
+                        ></div>
+                      </div>
+                    ))}
+                </div>
+              </div>
             </figure>
           </div>
         </div>

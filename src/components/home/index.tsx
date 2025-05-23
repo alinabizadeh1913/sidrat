@@ -14,7 +14,7 @@ const HomeComponents = () => {
       <section className="block md:hidden">
         <MysticAura />
       </section>
-      <section className="block md:hidden pb-9 px-[32px] relative">
+      <section className="block md:hidden pb-9 px-[32px] sticky top-0 z-[100] bg-[#151616e8] backdrop-blur-md">
         <HomeNavbar setIsMenuOpen={setIsMenuOpen} />
       </section>
       <Header />

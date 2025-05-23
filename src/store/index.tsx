@@ -21,8 +21,8 @@ interface HeaderStore {
 }
 
 const useStore = create<LanguageStore>((set) => ({
-  language: "ar",
-  direction: "rtl",
+  language: "en",
+  direction: "ltr",
 
   setLanguage: (lang) => {
     setTimeout(() => {

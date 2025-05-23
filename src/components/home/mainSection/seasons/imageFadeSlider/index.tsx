@@ -85,7 +85,7 @@ const ImageFadeSlider = ({
             key={index}
             className={`carousel-item ${index === 0 ? "active" : ""}`}
           >
-            <div className="absolute inset-0 bg-overlay-1 z-[1]" />
+            <div className="absolute inset-0 bg-overlay-1 z-[1] hidden md:block" />
             <Image
               src={`${baseUrl}${url}`}
               alt={alt}

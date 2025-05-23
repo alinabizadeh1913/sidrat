@@ -479,7 +479,7 @@ body {
   right: 0;
   bottom: 0;
   pointer-events: none;
-  border-radius: 25px;
+  border-radius: 20px;
   z-index: 0;
   overflow: hidden;
   display: flex;
@@ -587,66 +587,66 @@ body {
 
 // Mobile Images
 
-@media screen and (max-width: 372px) {
-  .home-mobile-images {
-    height: 360px;
-  }
-}
-@media screen and (min-width: 372px) and (max-width: 400px) {
-  .home-mobile-images {
-    height: 400px;
-  }
-}
-@media screen and (min-width: 400px) and (max-width: 450px) {
-  .home-mobile-images {
-    height: 455px;
-  }
-}
-@media screen and (min-width: 450px) and (max-width: 480px) {
-  .home-mobile-images {
-    height: 440px;
-  }
-}
-@media screen and (min-width: 480px) and (max-width: 500px) {
-  .home-mobile-images {
-    height: 460px;
-  }
-}
-@media screen and (min-width: 500px) and (max-width: 570px) {
-  .home-mobile-images {
-    height: 480px;
-  }
-}
-@media screen and (min-width: 570px) and (max-width: 600px) {
-  .home-mobile-images {
-    height: 500px;
-  }
-}
-@media screen and (min-width: 600px) and (max-width: 650px) {
-  .home-mobile-images {
-    height: 560px;
-  }
-}
-@media screen and (min-width: 650px) and (max-width: 700px) {
-  .home-mobile-images {
-    height: 600px;
-  }
-}
-@media screen and (min-width: 700px) and (max-width: 750px) {
-  .home-mobile-images {
-    height: 650px;
-  }
-}
-@media screen and (min-width: 750px) and (max-width: 825px) {
-  .home-mobile-images {
-    height: 720px;
-  }
-}
-@media screen and (min-width: 825px) and (max-width: 900px) {
-  .home-mobile-images {
-    height: 740px;
-  }
-}
+// @media screen and (max-width: 372px) {
+//   .home-mobile-images {
+//     height: 360px;
+//   }
+// }
+// @media screen and (min-width: 372px) and (max-width: 400px) {
+//   .home-mobile-images {
+//     height: 400px;
+//   }
+// }
+// @media screen and (min-width: 400px) and (max-width: 450px) {
+//   .home-mobile-images {
+//     height: 455px;
+//   }
+// }
+// @media screen and (min-width: 450px) and (max-width: 480px) {
+//   .home-mobile-images {
+//     height: 440px;
+//   }
+// }
+// @media screen and (min-width: 480px) and (max-width: 500px) {
+//   .home-mobile-images {
+//     height: 460px;
+//   }
+// }
+// @media screen and (min-width: 500px) and (max-width: 570px) {
+//   .home-mobile-images {
+//     height: 480px;
+//   }
+// }
+// @media screen and (min-width: 570px) and (max-width: 600px) {
+//   .home-mobile-images {
+//     height: 500px;
+//   }
+// }
+// @media screen and (min-width: 600px) and (max-width: 650px) {
+//   .home-mobile-images {
+//     height: 560px;
+//   }
+// }
+// @media screen and (min-width: 650px) and (max-width: 700px) {
+//   .home-mobile-images {
+//     height: 600px;
+//   }
+// }
+// @media screen and (min-width: 700px) and (max-width: 750px) {
+//   .home-mobile-images {
+//     height: 650px;
+//   }
+// }
+// @media screen and (min-width: 750px) and (max-width: 825px) {
+//   .home-mobile-images {
+//     height: 720px;
+//   }
+// }
+// @media screen and (min-width: 825px) and (max-width: 900px) {
+//   .home-mobile-images {
+//     height: 740px;
+//   }
+// }
 
 // Mobile Seasons
 
@@ -836,19 +836,19 @@ body {
 }
 
 // Mobile Images - Optimized Heights
-.home-mobile-images {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 5px;
-  transition: transform 0.5s ease;
-}
+// .home-mobile-images {
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+//   border-radius: 5px;
+//   transition: transform 0.5s ease;
+// }
 
-@media screen and (min-width: 600px) {
-  .home-mobile-images {
-    max-height: 500px;
-  }
-}
+// @media screen and (min-width: 600px) {
+//   .home-mobile-images {
+//     max-height: 500px;
+//   }
+// }
 
 // Mobile Card Design
 .mobile-card {
@@ -905,18 +905,18 @@ body {
       transition: transform 0.5s ease;
     }
 
-    &::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(21, 22, 22, 0) 0%,
-        rgba(21, 22, 22, 0.2) 50%,
-        rgba(21, 22, 22, 0.4) 100%
-      );
-      z-index: 1;
-    }
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   inset: 0;
+    //   background: linear-gradient(
+    //     to bottom,
+    //     rgba(21, 22, 22, 0) 0%,
+    //     rgba(21, 22, 22, 0.2) 50%,
+    //     rgba(21, 22, 22, 0.4) 100%
+    //   );
+    //   z-index: 1;
+    // }
   }
 
   .mobile-button-container {
@@ -953,11 +953,11 @@ body {
     padding: 24px;
 
     &:nth-child(odd) .mobile-image-container {
-      height: 400px;
+      height: 300px;
     }
 
     &:nth-child(even) .mobile-image-container {
-      height: 500px;
+      height: 300px;
     }
   }
 }
@@ -965,11 +965,11 @@ body {
 @media screen and (min-width: 450px) and (max-width: 600px) {
   .mobile-card {
     &:nth-child(odd) .mobile-image-container {
-      height: 450px;
+      height: 350px;
     }
 
     &:nth-child(even) .mobile-image-container {
-      height: 550px;
+      height: 350px;
     }
   }
 }
@@ -979,11 +979,11 @@ body {
     padding: 32px;
 
     &:nth-child(odd) .mobile-image-container {
-      height: 500px;
+      height: 400px;
     }
 
     &:nth-child(even) .mobile-image-container {
-      height: 600px;
+      height: 400px;
     }
   }
 }

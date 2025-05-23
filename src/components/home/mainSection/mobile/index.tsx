@@ -60,6 +60,13 @@ const SeasonsMobile = () => {
             }`}
           >
             <div className="mobile-content">
+              <div className="mobile-image-container">
+                <ImageFadeSlider
+                  imageUrls={season.imageUrls}
+                  alt={season.slug}
+                  isActive={visibleSections.includes(index)}
+                />
+              </div>
               <div>
                 <MainSectionTitle lang={language} active>
                   {language === "ar"
@@ -78,16 +85,6 @@ const SeasonsMobile = () => {
                   </MainSectionDescription>
                 </div>
               </div>
-
-              <div className="mobile-image-container">
-                <ImageFadeSlider
-                  imageUrls={season.imageUrls}
-                  alt={season.slug}
-                  className="home-mobile-images"
-                  isActive={visibleSections.includes(index)}
-                />
-              </div>
-
               <div className="mobile-button-container">
                 <Link href={season.href} className="button-hover block w-full">
                   <Button lang={language} />

@@ -60,6 +60,21 @@ const ChangeLanguage = () => {
           } absolute top-[155%] md:top-[130%] left-0 right-0 w-[89px] md:w-full border-primary rounded-[10px] pt-[6px] pb-2 flex flex-col gap-y-[6px] bg-[#151616] md:bg-[#ffffff09] backdrop-blur-[10px] duration-300`}
         >
           <div
+            className="en-language cursor-pointer"
+            onClick={() => {
+              setLanguage("en");
+              setIsLanguageOpen(false);
+            }}
+          >
+            <MainText
+              className="text-[14px] text-tertiary text-center"
+              lang="en"
+              weight="regular"
+            >
+              English
+            </MainText>
+          </div>
+          <div
             className="ar-language cursor-pointer"
             onClick={() => {
               setLanguage("ar");
@@ -87,21 +102,6 @@ const ChangeLanguage = () => {
               weight="regular"
             >
               فارسی
-            </MainText>
-          </div>
-          <div
-            className="en-language cursor-pointer"
-            onClick={() => {
-              setLanguage("en");
-              setIsLanguageOpen(false);
-            }}
-          >
-            <MainText
-              className="text-[14px] text-tertiary text-center"
-              lang="en"
-              weight="regular"
-            >
-              English
             </MainText>
           </div>
         </div>
